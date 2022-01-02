@@ -1,0 +1,408 @@
+tas:
+  - name: <a href="mailto:alexanderchin@college.harvard.edu">Alex Chin</a> (Head TF)
+  - name: <a href="mailto:ktian@college.harvard.edu">Katherine Tian</a> (Head TF)
+  - name: <a href="mailto:annatrella@g.harvard.edu">Anna Trella</a>
+  - name: <a href="mailto:catherinezeng@college.harvard.edu">Catherine Zeng</a>
+  - name: <a href="mailto:charumathibadrinath@college.harvard.edu">Charumathi Badrinath</a>
+  - name: <a href="mailto:lliu@college.harvard.edu">Lucy Liu</a>
+  - name: <a href="mailto:matthewnazari@college.harvard.edu">Matthew Nazari</a>
+  - name: <a href="mailto:rajathsalegame@college.harvard.edu">Rajath Salegame</a>
+  - name: <a href="mailto:raphaelpellegrin@g.harvard.edu">Raphael Pellegrin</a>
+  - name: <a href="mailto:skylerwu@college.harvard.edu">Skyler Wu</a>
+
+
+ohs:
+  - time: TBD
+    TF: TBD
+
+
+dates: ["",
+  "",
+  "Jan. 26 (T)", # Introduction, Release HW 1
+  "Jan. 28 (Th)", # Linear Regression
+  "Jan. 29 (Fr)",
+  "",
+  "Feb. 2 (T)", # Probabilistic Linear Regression
+  "Feb. 4 (Th)", # Linear Classification
+  "Feb. 5 (Fr)",
+  "",
+  "Feb. 9 (T)", # Probabilistic Linear Regression
+  "Feb. 11 (Th)", # Model Selection: Frequentist
+  "Feb. 12 (Fr)",
+  "",
+  "Feb. 16 (T)", # Model Selection: Bayesian
+  "Feb. 18 (Th)", # Neural Networks 1
+  "Feb. 19 (Fr)",
+  "",
+  "Feb. 23 (T)", # Neural Networks 2
+  "Feb. 25 (Th)", # SVM 1
+  "Feb. 26 (Fr)",
+  "",
+  "Mar. 2 (T)", # SVM 2
+  "Mar. 4 (Th)", # EthiCS
+  "Mar. 5 (Fr)",
+  "",
+  "Mar. 9 (T)", # Clustering
+  "Mar. 11 (Th)", # Midterm 1
+  "Mar. 12 (Fr)",
+  "",
+  "Mar. 16 (T)", # No class, wellness day
+  "Mar. 18 (Th)", # Mixture Models
+  "Mar. 19 (Fr)",
+  "",
+  "Mar. 23 (T)", # PCA
+  "Mar. 25 (Th)", # Topic Models
+  "Mar. 26 (Fr)",
+  "",
+  "Mar. 30 (T)", # Graphical Models
+  "Apr. 1 (Th)", # Inference for Bayes Nets
+  "Apr. 2 (Fr)",
+  "",
+  "Apr. 6 (T)", # HMMs
+  "Apr. 8 (Th)", # MDPs
+  "Apr. 9 (Fr)",
+  "",
+  "Apr. 13 (T)", # RL 1
+  "Apr. 15 (Th)", # No class, wellness day
+  "Apr. 16 (Fr)",
+  "",
+  "Apr. 20 (T)", # RL 2
+  "Apr. 22 (Th)", # Interpretability
+  "Apr. 23 (Fr)",
+  "",
+  "Apr. 27 (T)", # Midterm 2
+  "Apr. 29 (Th)", # Free?
+]
+
+lectures:
+  - topic:
+    subtopic:
+    section: <a href="/cs181-web/sections#sec0">0. Math and Code Review</a>
+    readings:
+    hw:
+    type: 'sec'
+  - topic:  #Jan 28
+    subtopic: <a href="/cs181-web/recap1">Introduction</a>
+    section:
+    readings: 2.1, 2.2.1
+    release: <a href="/cs181-web/homework#hw1">HW 1 (Regression)</a> released
+  - topic: Regression #Jan 30
+    subtopic: <a href="/cs181-web/recap2">Linear Regression</a>
+    section:
+    readings: 2.3-2.5, 2.6.1, 2.7.1
+    hw:
+  - topic:
+    subtopic:
+    section:
+    readings:
+    hw:
+    type: 'hw'
+  - topic:
+    subtopic:
+    section: <a href="/cs181-web/sections#sec1">1. Linear Regression, MLE</a>
+    readings:
+    hw:
+    type: 'sec'
+  - topic: #Feb 4
+    subtopic: <a href="/cs181-web/recap3">Probabilistic Linear Regression</a>
+    section:
+    readings: 2.6.2, 2.6.3
+    hw:
+  - topic: Classification
+    subtopic: <a href="/cs181-web/recap4">Linear Classification</a>
+    section:
+    readings: 3.1-3.5
+    dl: HW 1 due
+  - topic:
+    subtopic:
+    section:
+    readings:
+    release: HW 2 (Classification, Bayes) released
+    type: 'hw'
+
+  - topic:
+    subtopic:
+    section: <a href="/cs181-web/sections#sec2">2. Probabilistic Classification</a>
+    readings:
+    hw:
+    type: 'sec'
+  - topic: #Feb 11
+    subtopic: <a href="/cs181-web/recap5">Probabilistic Linear Classification</a>
+    section:
+    readings: 3.6
+    demos:
+    hw:
+  - topic: Model Selection
+    subtopic: <a href="/cs181-web/recap6">Model Selection - Frequentist</a>
+    section:
+    readings: 2.7, 2.8
+    hw:
+  - topic:
+    subtopic:
+    section:
+    readings:
+    hw:
+    type: 'hw'
+  - topic:
+    subtopic:
+    section: <a href="/cs181-web/sections#sec3">3.</a>
+    readings:
+    hw:
+    type: 'sec'
+  - topic:
+    subtopic: <a href="/cs181-web/recap7">Model Selection - Bayesian</a>
+    section:
+    readings: 2.8, 2.9
+    hw:
+  - topic: Neural Networks
+    subtopic: <a href="/cs181-web/recap8">Neural Networks 1</a>
+    section:
+    readings: 4.1-4.4, 4.6
+    hw:
+  - topic:
+    subtopic:
+    section:
+    readings:
+    dl: HW 2 due
+    release: HW 3 (Bayes, Neural Networks) released
+    type: 'hw'
+  - topic:
+    subtopic:
+    section: <a href="/cs181-web/sections#sec4">4.</a>
+    readings:
+    hw:
+    type: 'sec'
+  - topic: #Feb 27
+    subtopic: <a href="/cs181-web/recap9">Neural Networks 2</a>
+    section:
+    readings: 4.4
+    hw:
+  - topic: SVMs #Mar 4
+    subtopic: <a href="/cs181-web/recap10">Support Vector Machines 1</a>
+    section:
+    readings: 5.1-5.3
+    hw:
+  - topic:
+    subtopic:
+    section:
+    readings:
+    hw:
+    type: 'hw'
+  - topic:
+    subtopic:
+    section: <a href="/cs181-web/sections#sec5">5.</a>
+    readings:
+    hw:
+    type: 'sec'
+
+
+  - topic: #Mar 6
+    subtopic: <a href="/cs181-web/recap11">Support Vector Machines 2</a>
+    section:
+    readings: 5.4
+    hw:
+  - topic:
+    subtopic: EthiCS Guest Lecture
+    section:
+    readings:
+    hw:
+  - topic:
+    subtopic:
+    section:
+    readings:
+    dl: HW 3 due
+    release: HW 4 (SVMs, Ethics, Clustering) released
+    type: 'hw'
+  - topic:
+    subtopic:
+    section: <a href="/cs181-web/sections#sec6">6.</a>
+    readings:
+    hw:
+    type: 'sec'
+
+
+  - topic: Unsupervised Learning
+    subtopic: <a href="/cs181-web/recap13">Clustering</a>
+    section:
+    readings: 6
+    hw:
+  - topic: #Mar 13
+    subtopic: Midterm 1
+    section:
+    readings:
+    demos:
+    hw:
+    type: 'exam'
+  - topic:
+    subtopic:
+    section:
+    readings:
+    hw:
+    type: 'hw'
+  - topic:
+    subtopic:
+    section: <a href="/cs181-web/sections#sec7">7.</a>
+    readings:
+    hw:
+    type: 'sec'
+
+
+  - topic:
+    subtopic: Wellness day, no class
+    section:
+    readings:
+    demos:
+    hw: <a href="/cs181-web/homework#hw4">HW4 (SVM, Clustering, and Ethics)</a> released
+  - topic: #Mar 27
+    subtopic: <a href="/cs181-web/recap14">Mixture Models</a>
+    section:
+    readings: 9.1-9.5
+    demos:
+    hw:
+  - topic:
+    subtopic:
+    section:
+    readings:
+    dl: HW 4 due
+    release: HW 5 (Mixtures, EM, Graphical) released
+    type: 'hw'
+  - topic:
+    subtopic:
+    section: <a href="/cs181-web/sections#sec8">8.</a>
+    readings:
+    hw:
+    type: 'sec'
+
+
+  - topic:
+    subtopic: <a href="/cs181-web/recap15">Principal Component Analysis</a>
+    section:
+    readings: 7
+    hw:
+  - topic:
+    subtopic: <a href="/cs181-web/recap16">Topic Models</a>
+    section:
+    readings: 9.6
+    hw:
+
+  - topic:
+    subtopic:
+    section:
+    readings:
+    release: Practical released
+    type: 'hw'
+
+  - topic:
+    subtopic:
+    section: <a href="/cs181-web/sections#sec9">9.</a>
+    readings:
+    hw:
+    type: 'sec'
+
+  - topic:  GMs and BNs
+    subtopic: <a href="/cs181-web/recap17">Graphical Models</a>
+    section:
+    readings: 8
+    hw:
+    type:
+  - topic: #Apr 10
+    subtopic: <a href="/cs181-web/recap18">Inference for Bayes Nets</a>
+    section:
+    readings:
+    demos:
+    hw:
+  - topic:
+    subtopic:
+    section:
+    readings:
+    dl: HW 5 due
+    type: 'hw'
+  - topic:
+    subtopic:
+    section: <a href="/cs181-web/sections#sec10">10.</a>
+    readings:
+    hw:
+    type: 'sec'
+
+  - topic:  #Apr 8
+    subtopic: <a href="/cs181-web/recap19">Hidden Markov Models</a>
+    section:
+    readings: 10
+    hw:
+    type:
+  - topic: #Apr 10
+    subtopic: <a href="/cs181-web/recap20">Markov Decision Processes</a>
+    section:
+    readings: SB 3.1-3.6, SB 4.1-4.4 *
+    demos:
+    hw:
+  - topic:
+    subtopic:
+    section:
+    readings:
+    dl: Practical due
+    release: HW 6 (Inference, MDPs) released
+    type: 'hw'
+  - topic:
+    subtopic:
+    section: <a href="/cs181-web/sections#sec11">11.</a>
+    readings:
+    hw:
+    type: 'sec'
+
+  - topic: RL
+    subtopic: <a href="/cs181-web/recap21">Reinforcement Learning 1</a>
+    section:
+    readings:
+    hw: <a href="/cs181-web/homework#hw6">HW6 (Inference in Graphical Models, MDPs)</a> released
+  - topic: # Apr 17
+    subtopic: Wellness day, no class
+    section:
+    readings:
+    hw:
+  - topic:
+    subtopic:
+    section:
+    readings:
+    hw:
+    type: 'hw'
+  - topic:
+    subtopic:
+    section: <a href="/cs181-web/sections#sec12">12.</a>
+    readings:
+    hw:
+    type: 'sec'
+
+  - topic:
+    subtopic: <a href="/cs181-web/recap22">Reinforcement Learning 2</a>
+    section:
+    readings: SB 1.1-1.4, SB 6.1-6.5 *
+    hw:
+  - topic: # Apr 24
+    subtopic: <a href="/cs181-web/recap23">Interpretability</a>
+    section:
+    readings:
+    demos:
+    hw:
+    type:
+  - topic:
+    subtopic:
+    section:
+    readings:
+    dl: HW 6 due
+    type: 'hw'
+  - topic:
+    subtopic:
+    section: <a href="/cs181-web/sections#sec13">13.</a>
+    readings:
+    hw:
+    type: 'sec'
+
+  - topic: # Apr 29
+    subtopic: Midterm 2
+    section:
+    readings:
+    demos:
+    hw:
+    type: 'exam'
+
