@@ -1,0 +1,200 @@
+---
+layout: page
+title: Lecture 2 Recap - Linear Regression
+mathjax: true
+weight: 0
+---
+
+<section class="main-container text">
+    <div class="main">
+      <h4>Date: January 28, 2021 (<a href="https://forms.gle/AaQ8Q2ES9LPAkRq98" target="_blank">Concept Check</a>, <a href="https://docs.google.com/forms/d/e/1FAIpQLScAWDyRcNSHT7pX2gg_rSH7mDEVZJSDjfnMd5BQ8sFIa46BKQ/viewanalytics" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
+      <h4>Relevant Textbook Sections: 2.3-2.5, 2.6.1, 2.7.1</h4>
+      <h4>Cube: Supervised, Continuous, Nonprobabilistic</h4>
+
+      <h4><a href="https://harvard.zoom.us/rec/play/iDjAVdAzARWNSRbTg2A_Q9ISYXA_IPThHo2k_NtpD0XiqxdU4kYS1RUL88wKcMQTFXLJGBCtfT2QyWnS.D7ZjQZcSz1cKu0jV">Lecture Video</a></h4>
+      <h4><a href="files/lecture2_slides.pdf" target="_blank">Slides</a></h4>
+      <h4><a href="files/lecture2_ipad.pdf" target="_blank">iPad Notes</a></h4>
+
+
+      <br>
+
+      <h3>Lecture 2 Summary</h3>
+
+      <ul>
+        <li><a href="#recap2_1">Introduction: Nonparametric vs Parametric Models</a></li>
+        <li><a href="#recap2_2">General Form of Regression (function class, loss function, find optimal w*)</a></li>
+        <li><a href="#recap2_3">Example: Linear Model with L2 Loss</a></li>
+        <li><a href="#recap2_4">Different Methods of Solving for $\textbf{w}^*$</a></li>
+        <li><a href="#recap2_5">Different Interpretations of Linear Regression</a></li>
+        <li><a href="#recap2_6">Basis Regression</a></li>
+      </ul>
+
+      <h2 id="recap2_1">Relevant Videos</h2>
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=J8w2iMF5Hak&list=PLrH1CxyJ7Vqb-pHzfUClJNXBDAKajHE74&index=2&t=0s">Linear Regression</a></li>
+        <li><a href="https://www.youtube.com/watch?v=Jy4EWpdw3z4&list=PLrH1CxyJ7Vqb-pHzfUClJNXBDAKajHE74&index=3&t=0s">Regularization</a></li>
+        <li><a href="https://www.youtube.com/watch?v=Y6DA7XFh_io&list=PLrH1CxyJ7Vqb-pHzfUClJNXBDAKajHE74&index=5&t=0s">Gradient descent</a></li>
+      </ul>
+
+      <br>
+
+
+      <h2 id="recap2_1">Introduction</h2>
+
+      The previous lecture, we covered nonparametric regression. As a recap, a nonparametric model doesn't have a fixed number of parameters used to make predictions, which means it doesn't need to make strong assumptions about the data. Instead, as the amount of training data increases, nonparametric models tend to become more and more complex as they incorporate the new data.
+
+      <br>
+      <br>
+
+      This lecture, we covered parametric regression. These models have a fixed set of parameters used to make predictions, which often means stronger assumptions are made about the data. Specifically, no matter how much more training data we have, these models have the same levels of complexity, as the number of parameters stays fixed. Here, more training data simply helps us improve our choice of parameters. The simplest example of parametric regression is linear regression, which will be the focus of today's lecture. Having a solid understanding of linear regression will make learning other parametric models much easier.
+
+      <h2 id="recap2_2">General Form of All Regressions</h2>
+
+      <ol>
+        <li>Choose a function class (examples: linear, KNN)</li>
+        <li>Choose a loss function (examples: L2 loss, L1 loss)</li>
+        <li>Define $\textbf{w}^*$ that minimizes the loss: $\textbf{w}^* \in \text{argmin}_{\textbf{w}} L(\textbf{w})$</li>
+      </ol>
+
+      <h2> Definiing notation and Goals: </h2>
+      We have that given $x$, we wish to predict $\hat{y}$, generally, where $x$ is an input column vector.
+
+      <h2 id="recap2_3">Linear Regression with L2 Loss</h2>
+
+      At lecture, we picked our function class to be linear, and our loss function to be L2, the sum of the squared residuals.
+
+      <h3>1. Choose A Function Class: Linear</h3>
+
+      Because we've picked a linear class, we start with the following:
+      $$\hat{y} = w_0 + w_1x_1 + w_2x_2 + ... + w_dx_d$$
+
+      $w_0$, $w_1$ ... $w_d$ are the weight parameters.
+
+      $x_1$, $x_2$ ... $x_d$ together form a single datapoint $\textbf{x}$ with d dimensions.
+
+      <br>
+      <br>
+
+      <h5>Sidenote: Merging Bias Trick</h5>
+
+      Before we move on, let us use the bias merging trick to rewrite the equation in a more condensed manner. To do this, first we set a $x_0 = 1$ for each data point. Essentially, imagine an imaginary dimension 0 that's set to 1 for every single datapoint. Now, if we organize all the weight parameters into one column vector $\textbf{w}$ and organize each x data point (including the 1 we just appended) into a column vector $\textbf{x}$, we can rewrite the equation as:
+      $$\hat{y} = \textbf{w}^T\textbf{x}$$
+
+      This works because when you multiply it out, you get:
+      $$\hat{y} = w_0 \cdot 1 + w_1x_1 + w_2x_2 + ... + w_dx_d = w_0 + w_1x_1 + w_2x_2 + ... + w_dx_d$$
+
+      <h3>2. Choose A Loss Function: L2 Loss</h3>
+
+      Because we have selected an L2 Loss, we start with the following:
+      $$L(\textbf{w}) = \frac{1}{2} \sum (y_n - \hat{y}_n)^2$$
+
+      Now, we can substitute in our $\hat{y}$ expression from before.
+      $$L(\textbf{w}) = \frac{1}{2}\sum (y_n - \textbf{w}^T\textbf{x}_n)^2$$
+
+      <br>
+      <br>
+
+      <u>Student Question: Why did we select the L2 loss?</u>
+
+      It turns out that picking a linear function class with an L2 loss leads to a computationally convenient problem when we solve for the optimal $\textbf{w}^*$. This is discussed further in the textbook, in Chapter 2.5.1.
+
+      <h3>3. Define $\textbf{w}^*$ that Minimizes the Loss</h3>
+
+      It turns out that in order to solve for $\textbf{w}^*$, we can take many different approaches.
+
+      Note: the following assumes the 1's to do the bias trick have already been added into the data.
+
+      <h5> Recap of gradients </h5>
+      Definition: The gradient vector holds the partial derivatives with respect to the variables in the d-dimensional space. Gradient methods work best when the problem is convex, primarily because having a convex problem allows for a single optimal solution to be found (ie. the local maximum is also a global maximum). The gradient vector is represented by $\nabla g(x)$. The gradient vector points in the direction of steepest ascent.
+
+
+      <h5 id="recap2_4">How to Solve for $\textbf{w}^*$: Method 1</h5>
+
+      One method is to use gradient descent. This will be covered in more detail in future lectures.
+
+      First, initialize $\textbf{w}$ to some random values. Then, take the gradient of the loss with respect to  $\textbf{w}$.
+
+      $$\frac{\partial \mathcal{L}(\textbf{w})}{\partial \textbf{w}} = \sum_n ((y_n - \textbf{w}^T\textbf{x}_n)(-\textbf{x}_n))$$
+
+      Next, update the $\textbf{w}$ in the following way:
+
+      $$\textbf{w}^{(t+1)} = \textbf{w}^{(t)} - \eta\frac{\partial \mathcal{L}(\textbf{w})}{\partial \textbf{w}} = \textbf{w}^{(t)} - \eta\sum_n ((y_n - \textbf{w}^T\textbf{x}_n)(-\textbf{x}_n))$$
+
+      Repeat this until convergence. $(y_n - \textbf{w}^T\textbf{x}_n)$ is a scalar and $(-\textbf{x}_n)$ is a vector, so the result will be a vector of weights.
+
+      <h5>How to Solve for $\textbf{w}^*$: Method 2</h5>
+
+      Another method is to directly solve for $\textbf{w}^*$. It turns out that in the case of a linear function with L2 loss, there is a clean solution for $\textbf{w}^*$. In order to solve for $\textbf{w}^*$, we take the gradient of the loss and set it to 0.
+
+      In this version of the derivation, there are D dimensions in the data and N data points. $\textbf{y}$ is an $N$-dimensional column vector, $\textbf{w}$ is a $(D+1)$-dimensional column vector of weights and $\textbf{X}$ is a $N \times (D+1)$ matrix of data such that the $n^{\text{th}}$ row is given by $\textbf{x}_n^T$. $\textbf{X}$ is called our design matrix. Note that in order to include our bias, we can set one entire feature (column of the design matrix) to 1, allowing us to derive the appropriate value in W for the bias. First we start with the residuals squared, but in matrix form.
+      $$L(\textbf{w}) = \frac{1}{2}(\textbf{y} - \textbf{X}\textbf{w})^T(\textbf{y} - \textbf{X}\textbf{w})$$
+
+      Let us take the gradient:
+      $$\frac{\partial \mathcal{L}(\textbf{w})}{\partial \textbf{w}} = -2\textbf{X}^T(\textbf{y}-\textbf{X}\textbf{w})$$
+
+
+      We use the formula $\frac{ \partial (\textbf{a} -\textbf{C} \textbf{b})^T \textbf{D} (\textbf{a} - \textbf{C} \textbf{b})}{\partial \textbf{b}} = -2 \textbf{C}^T \textbf{D} (\textbf{a} - \textbf{C}\textbf{b})$ (equation 64 in the cookbook) where $\textbf{D}$ must be symmetric. $\textbf{D}$ is the identity matrix in our case.
+
+      Note: The derivative can also be taken by first expanding the loss function and computing the derivatives term by term.
+
+      Now we set it to 0 and find $\textbf{w}^*$:
+          $$\begin{align*}
+              0 &= -2\textbf{X}^T\textbf{y} + 2\textbf{X}^T\textbf{X}\textbf{w}^* \\
+              \textbf{X}^T\textbf{X}\textbf{w}^* &= \textbf{X}^T\textbf{y} \\
+              \textbf{w}^* &= (\textbf{X}^T\textbf{X})^{-1}\textbf{X}^T\textbf{y}
+            \end{align*}
+          $$
+
+      For a given datapoint $\textbf{x}$, the corresponding prediction is
+          $$\begin{align*}
+            \hat{y} &= \left((\textbf{X}^T\textbf{X})^{-1}\textbf{X}^T\textbf{y}\right)^T\textbf{x} \\
+            \hat{y} &= (\textbf{X}^T\textbf{y})^T(\textbf{X}^T\textbf{X})^{-T}\textbf{x} \\
+            \hat{y} &= (\textbf{X}^T\textbf{y})^T(\textbf{X}^T\textbf{X})^{-1}\textbf{x}
+            \end{align*}
+          $$
+
+      Note: to take the inverse, we need $\textbf{X}$ to have full column rank, which makes $\textbf{X}^T\textbf{X}$ positive definite, and guarantees an inverse. The interpretation is that the features will not be co-linear (the redundant encoding problem). We also find the second order condition (second derivative) $\frac{\partial^2}{\partial \textbf{w}^2} L(\textbf{w})$, and ensure that it is positive definite.
+
+      <br>
+      <u id="recap2_5">Statistics View:</u>
+
+      $(\textbf{X}^T\textbf{y})^T$ is the correlation between $\textbf{x}$ and $y$, so if the correlation is high, the weights should be higher since you should weigh $\textbf{x}$ by more in order to better predict $y$. $(\textbf{X}^T\textbf{X})$ is the variation in $\textbf{x}$.
+
+      <br>
+      <br>
+
+      <u>Linear Algebra View:</u>
+
+      We have $D$ $\textbf{x}$-vectors living in $N$-dimensions. By taking a linear combination of $D$ vectors, we are trying to produce a length $N$ vector $\hat{\textbf{y}}$. Our $\hat{\textbf{y}}$ is essentially the closest projection of $\textbf{y}$ onto the row space of $\textbf{X}$.
+
+      <br>
+      <br>
+
+      <u>Student Question: Why is w a column?</u> Simply convention. You can manipulate the dimensions and the various derivations will be slightly different, using different transposes in different places, but the meaning is all the same.
+
+      <br>
+      <br>
+
+      <u>Important Note on Notation:</u>
+
+      In lecture, we had $\textbf{y}$ as an $N$-dimensional row vector and $\textbf{X}$ as a $(D+1) \times N$ matrix. In this notation the loss is given by
+      $$L(\textbf{w}) = \frac{1}{2}(\textbf{y} - \textbf{w}^T\textbf{X})(\textbf{y} - \textbf{w}^T\textbf{X})^T$$
+      and the corresponding expressions for $\textbf{w}^*$ and $\hat{y}$ are
+      $$\textbf{w}^* = (\textbf{X}\textbf{X}^T)^{-1}\textbf{X}\textbf{y}^T$$
+      $$\hat{\textbf{y}} = (\textbf{X}\textbf{y}^T)^T(\textbf{X}\textbf{X}^T)^{-1} \textbf{x}$$
+
+      Here, $\textbf{w}^*$ is called a best linear unbiased estimator (otherwise called a BLUE, but this is out of scope for the class). Conventions for notations vary between different sources so it is a useful skill to be able to understand and derive expressions in different notational formats.
+
+      <h2 id="recap2_6">Basis Regression</h2>
+
+      Sometimes, linear regression is not enough to model the input data, as all it does is simply scales our input variables. In order to create more complex models, we can use a basis to transform our data into more complicated forms, using polynomial functions, sine or cosine functions, and more. Essentially, what we can do is "move our data into a new basis", or in other words, transform training data before we perform the actual linear regression. Then, when we get our test data and need to make predictions, we transform the test data as well, then use our model to make our predictions.
+
+      <br>
+      <br>
+
+      We use $\phi(\cdot)$ to denote a basis function, which is the transformation we'll apply to each $\textbf{x}$ data input.
+
+      Perhaps we have an original point $\textbf{x} = (x_1, x_2)^T$, and we may pick a basis function $\phi(\textbf{x})$ that transforms the data point into $\phi(\textbf{x}) = (x_1, x_2, \cos(x_1), {x_1}^4, \sin(x_2))^T$.
+
+    </div>
+</section>

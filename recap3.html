@@ -1,0 +1,215 @@
+---
+layout: page
+title: Lecture 3 Recap - Probabilistic Regression
+mathjax: true
+weight: 0
+---
+
+<section class="main-container text">
+    <div class="main">
+      <h4>Date: February 2, 2021 (<a href="https://forms.gle/grbBBD33hXzRAumCA" target="_blank">Concept Check</a>, <a href="https://docs.google.com/forms/d/1FAIpQLSfIT9Ox03AsH5ZQShRsrPagzj4Hovx-YhFN9WbQhoF2dPdQQA/viewanalytics" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
+      <h4>Relevant Textbook Sections: 2.6.2, 2.6.3</h4>
+      <h4>Cube: Supervised, Continuous, Probabilistic</h4>
+
+      <br>
+
+      <h4><a href="https://harvard.zoom.us/rec/play/NyladU3p8999uTODvcEAnAd40xH-w41eSRMu8gDixcZXxmbR226hJ3WO0nrlGzZ4yGTueBVEIXUKgBto.iLSkG52m2eAtvQpD
+	  ">Lecture Video</a></h4>
+	  <h4><a href="files/lecture3_ipad.pdf" target="_blank">iPad Notes</a></h4>
+
+
+      <h3>Lecture 3 Summary</h3>
+
+      <ul>
+        <li><a href="#recap3_1">Intro: Nonprobabilistic vs Probabilistic Models</a></li>
+        <li><a href="#recap3_2">Setting Up the Generative Story</a></li>
+        <li><a href="#recap3_3">Maximizing Likelihood of the Model (with respect to w)</a></li>
+        <li><a href="#recap3_4">Relationship of Maximizing Likelihood to Loss</a></li>
+        <li><a href="#recap3_5">Repeating Maximizing Likelihood (with respect to w) with Matrices</a></li>
+        <li><a href="#recap3_6">Repeating with Respect to $\sigma^2$ instead of w</a></li>
+        <li><a href="#recap3_7">Extending the Story: Making w Random Too</a></li>
+      </ul>
+
+      <h2 id="recap2_1">Relevant Videos</h2>
+      <ul>
+        <li><a href="https://www.youtube.com/watch?v=LfRaZu5_Q14&list=PLrH1CxyJ7Vqb-pHzfUClJNXBDAKajHE74&index=4&t=0s">Probabilistic Regression</a></li>
+      </ul>
+
+      <br>
+
+      <h2 id="recap3_1">Introduction</h2>
+
+      In the previous lecture (2), we covered linear regression from a non-probabilistic point of view.
+      We specified our problem by assuming y is a function of x, assuming that the function is linear,
+      and choosing squared loss. We saw that there was a closed-form solution for the parameters
+      of the linear function that minimize the squared loss (subject to an Invertibility condition).
+
+	  <br>
+	  <br>
+
+	  One criticism of this approach is that the loss function was just handed to us, without us
+      making a clear set of assumptions about the data and possible noise in the data-generating process.
+
+      <br>
+      <br>
+
+      This lecture (3), we covered linear regression from a probabilistic point of view.
+      In a probabilistic model, we start off with something fun and intuitive by specifying
+      what is called a Generative Model. We ask, "what's the story of how this data came to be?"
+      This can involve assumptions and uncertainties.
+      We then try to mathematically encode certain and uncertain aspects of this story.
+      Formally, this results in a probability distribution over our data. Finally,
+      a mainstay approach in stats/ML is find a set of parameters that give
+      highest probability (or density) to our data.
+
+
+      <h2 id="recap3_2">Generative Model</h2>
+
+      One example of a Story / Generative Model:
+
+      <ul>
+          <li> we have some input $\mathbf{x}_n$  </li>
+          <li> Nari multiplies it by $\mathbf{w}$ </li>
+          <li> Before we get to see the result, Finale draws noise
+              $\epsilon_n$ ~ $N(0, \sigma^2)$ and adds it. Call the result $y_n$ </li>
+          <li> Nari and Finale repeat this $N$ times. Then they throw away $\mathbf{w}$ and $\{\epsilon_n\}_{n=1}^N$, so
+              we only observe $\{\mathbf{x}_n, y_n \}_{n=1}^N$
+      </ul>
+
+      Formally, $\mathbf{x}_n$ is a random variable, but we are only modeling $y_n$ given an arbitrary $\mathbf{x}$,
+      so we don't need to consider $\mathbf{x}_n$'s distribution. $\epsilon_n$ is also a random variable.
+      $y_n$ is a function of both, so it too is a random variable. In particular, we know its distribution!
+
+      When we condition on $\mathbf{w},\mathbf{x}$ they are turned into constants. Next, for any constants $c_1,c_2$,
+       if $\epsilon \sim \mathcal{N}(c_2,\sigma^2)$ and $z = c_1 + \epsilon$, then
+            $$z \mid c_1,c_2,\sigma \sim \mathcal{N}(c_1+c_2,\sigma^2)$$
+
+      This means
+
+      $$  y \sim \mathcal{N}(\mathbf{w}^\top \mathbf{x}, \sigma^2)  $$
+
+      <h2 id="recap3_3">Maximizing Log Likelihood (with respect to $\mathbf{w}$)</h2>
+
+      Now that we've set up the model, we can think about how we would find $\mathbf{w}$.
+       We can start by asking, ``for a given value of $\mathbf{w}$,
+      how likely would it have been for us to observe our data?
+
+	  <br>
+	  <br>
+
+	  This is formalized by the conditional
+        distribution of the data given the model $P(\textrm{data|model})$.
+        Here ``model" means a particular value of $\mathbf{w}$ and $\sigma$.
+      We call this conditional distribution -as a function of the parameters- the ``Likelihood".
+      Since we trust our data, we think a good $\mathbf{w}$ is one that maximizes the likelihood.
+      Remember, the generative story we assumed specifies the likelihood.
+      In a few lectures, we will assume different models. Each one will have their own Likelihood.
+      <br>
+      <br>
+
+      Before trying to maximize, lets incrementally re-write the Likelihood.
+      Because we assumed conditionally i.i.d. $y_n$ given $x_n$ and parameters,
+
+
+      $$P(\textrm{data|model}) = \prod_n p(y_n | \mathbf{x}_n, \mathbf{w}, \sigma^2)$$
+
+      Since we are trying to find the w* that maximizes this function, we can apply a monotonic function
+      to the entire expression and will still arrive at the same final w*.
+
+      <br>
+
+      $$\log P(\textrm{data|model}) = \sum_n \log p(y_n | \mathbf{x}_n, \mathbf{w}, \sigma^2)$$
+
+      <br>
+
+      Next, we substitute in the PDF of a Gaussian. Here, we assume $\sigma^2$ is known, and $\mathbf{w}$ is not. As a reminder, our general PDF is:
+
+      $$\mathcal{N}(z; \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}}\exp[-\frac{(z-\mu)^2}{2\sigma^2}]$$.
+
+      <br>
+
+      Substituting $\log p$ with $\log \mathcal{N}$ we have
+
+      $$\begin{align*}
+      \log P(\textrm{data|model}) &= \sum_n \log \mathcal{N}(y_n | \mathbf{w}^T\mathbf{x}_n, \sigma^2) \\
+                 &= \sum_n \log \Big(\frac{1}{\sqrt{2\pi\sigma^2}}\exp[-\frac{(y_n-\mathbf{w}^T\mathbf{x}_n)^2}{2\sigma^2}] \Big)\\
+                 &= \sum_n \log \Big( \frac{1}{\sqrt{2\pi\sigma^2}}\Big) - \frac{(y_n-\mathbf{w}^T\mathbf{x}_n)^2}{2\sigma^2}\\
+                 &= N \log \Big(\frac{1}{\sqrt{2\pi\sigma^2}}\Big) - \sum_n \frac{1}{2\sigma^2}(y_n-\mathbf{w}^T\mathbf{x}_n)^2
+      \end{align*}
+      $$
+
+      First term doesn't depend on $\mathbf{w}$. Second term looks familiar ! Just like our least-squares loss. So now,
+      if we maximize the probability of the data, we will get the same solution as least squares.
+        The solution is known as the ``maximum likelihood solution" or ``maximum likelihood estimator" (MLE)
+        for this generative model.
+
+        <br>
+		<br>
+
+        Note that we could have used other noise distributions (see Concept Check).
+
+
+      <h2 id="recap3_5">Repeating Maximizing Likelihood (with respect to $\mathbf{w}$) with Matrices</h2>
+
+      Both for practice, and as a check for our understanding, let us repeat the process with matrices, where we have
+      $p(\mathbf{y} | \mathbf{X}, \mathbf{w}, \sigma^2)$ as a multivariate Gaussian. Note: in code, it's also faster to do matrix computation than
+      using for loops, so this is useful to know for that reason as well. We have $\mathbf{X}$ in dimensions $(N \times D)$.
+      We also have $\mathbf{\mu} = \mathbf{X}\mathbf{w}$ and $\mathbf{\Sigma} = \mathbb{1}\sigma^2$. Below is the general formula for a multivariate Gaussian
+      $\mathcal{N}(\mathbf{z}; \mathbf{\mu}, \mathbf{\Sigma})$:
+
+      $$\frac{1}{\sqrt{2\pi|\mathbf{\Sigma}|}}\exp[-\frac{1}{2}(\mathbf{z}-\mathbf{\mu})^T\mathbf{\Sigma}^{-1}(\mathbf{z}-\mathbf{\mu})]$$
+
+      After substituting in and taking the log, we have:
+
+      $$\log(\frac{1}{\sqrt{2\pi|\mathbf{\Sigma}|}}\exp[-\frac{1}{2}(\mathbf{y}-\mathbf{X}\mathbf{w})^T\mathbf{\Sigma}^{-1}(\mathbf{y}-\mathbf{X}\mathbf{w})]$$
+
+      $$\log(\frac{1}{\sqrt{2\pi|\mathbf{\Sigma}|}}) - \frac{1}{2} (\mathbf{y}-\mathbf{X}\mathbf{w})^T\mathbf{\Sigma}^{-1}(\mathbf{y}-\mathbf{X}\mathbf{w})$$
+
+      $$-\frac{N}{2} \log (2\pi\sigma^2) - \frac{1}{2}(\mathbf{y}-\mathbf{X}\mathbf{w})^T\mathbf{\Sigma}^{-1}(\mathbf{y}-\mathbf{X}\mathbf{w})$$
+
+      Note: we can do the above step because $\mathbf{\Sigma}$ is diagonal.
+
+      $$-\frac{N}{2} \log 2\pi\sigma^2 - \frac{1}{2\sigma^2}(\mathbf{y}-\mathbf{X}\mathbf{w})^T(\mathbf{y}-\mathbf{X}\mathbf{w})$$
+
+      And the final result is what we had before (again, we omit taking the derivative here, see notes from previous lecture for that)!
+
+      <br>
+      <br>
+
+      <h2 id="recap3_6">Estimating $\sigma^2$ instead of $\mathbf{w}$</h2>
+
+      We can also take the derivative with respect to
+      $\sigma^2$ to find the $\sigma^2$. Now, we assume
+      that $\mathbf{w}$ is given. Important note: we are looking at $\sigma^2$ specifically, the variance, not $\sigma$.
+      First, we start with the equation we used from before.
+
+      $$-\frac{N}{2} \log 2\pi\sigma^2 - \frac{1}{2\sigma^2} (\mathbf{y}-\mathbf{X}\mathbf{w})^T(\mathbf{y}-\mathbf{X}\mathbf{w})$$
+
+      $$-\frac{N}{2} \log 2\pi - \frac{N}{2}\log\sigma^2 -\frac{1}{2\sigma^2}(\mathbf{y}-\mathbf{X}\mathbf{w})^T(\mathbf{y}-\mathbf{X}\mathbf{w})$$
+
+      Take the derivative with respect to $\sigma^2$ (note: not with respect to $\sigma$):
+
+      $$\begin{align*}
+      0 &= -\frac{N}{2\sigma^2} + \frac{1}{2(\sigma^2)^2}(\mathbf{y}-\mathbf{X}\mathbf{w})^T(\mathbf{y}-\mathbf{X}\mathbf{w}) \\
+      0 &= -N\sigma^2 + (\mathbf{y}-\mathbf{X}\mathbf{w})^T(\mathbf{y}-\mathbf{X}\mathbf{w}) \\
+      \sigma^2_{ML} &= \frac{1}{N}(\mathbf{y}-\mathbf{X}\mathbf{w})^T(\mathbf{y}-\mathbf{X}\mathbf{w})
+      \end{align*}
+      $$
+
+      This is the empirical variance, which makes sense!
+
+      <h2 id="recap3_7">Extending the Story: Making $\mathbf{w}$ Random Too</h2>
+
+      What we did: probabilistically approach to regression (1) the generative model (2) maximize the
+        likelihood w.r.t parameters
+        <br>
+      	<br>
+      What if we were not totally clueless about $\mathbf{w}$? What if we knew it was
+        drawn from some particular $p(\mathbf{w})$? This leads us into the Bayesian view,
+        which we will get to in a few weeks!
+
+        <br>
+		<br>
+
+    </div>
+</section>
