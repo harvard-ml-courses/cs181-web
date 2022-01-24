@@ -16,389 +16,437 @@ ohs:
     TF: TBD
 
 
-dates: ["",
-  "",
-  "Jan. 26 (T)", # Introduction, Release HW 1
-  "Jan. 28 (Th)", # Linear Regression
-  "Jan. 29 (Fr)",
-  "",
-  "Feb. 2 (T)", # Probabilistic Linear Regression
-  "Feb. 4 (Th)", # Linear Classification
-  "Feb. 5 (Fr)",
-  "",
-  "Feb. 9 (T)", # Probabilistic Linear Regression
-  "Feb. 11 (Th)", # Model Selection: Frequentist
-  "Feb. 12 (Fr)",
-  "",
-  "Feb. 16 (T)", # Model Selection: Bayesian
-  "Feb. 18 (Th)", # Neural Networks 1
-  "Feb. 19 (Fr)",
-  "",
-  "Feb. 23 (T)", # Neural Networks 2
-  "Feb. 25 (Th)", # SVM 1
-  "Feb. 26 (Fr)",
-  "",
-  "Mar. 2 (T)", # SVM 2
-  "Mar. 4 (Th)", # EthiCS
-  "Mar. 5 (Fr)",
-  "",
-  "Mar. 9 (T)", # Clustering
-  "Mar. 11 (Th)", # Midterm 1
-  "Mar. 12 (Fr)",
-  "",
-  "Mar. 16 (T)", # No class, wellness day
-  "Mar. 18 (Th)", # Mixture Models
-  "Mar. 19 (Fr)",
-  "",
-  "Mar. 23 (T)", # PCA
-  "Mar. 25 (Th)", # Topic Models
-  "Mar. 26 (Fr)",
-  "",
-  "Mar. 30 (T)", # Graphical Models
-  "Apr. 1 (Th)", # Inference for Bayes Nets
-  "Apr. 2 (Fr)",
-  "",
-  "Apr. 6 (T)", # HMMs
-  "Apr. 8 (Th)", # MDPs
-  "Apr. 9 (Fr)",
-  "",
-  "Apr. 13 (T)", # RL 1
-  "Apr. 15 (Th)", # No class, wellness day
-  "Apr. 16 (Fr)",
-  "",
-  "Apr. 20 (T)", # RL 2
-  "Apr. 22 (Th)", # Interpretability
-  "Apr. 23 (Fr)",
-  "",
-  "Apr. 27 (T)", # Midterm 2
-  "Apr. 29 (Th)", # Free?
+dates: [
+  "Week 0",
+  "Jan. 25 (Tu)", # Introduction, Release HW 1
+  "Jan. 27 (Th)", # Linear Regression
+  "Jan. 28 (Fr)",
+  "Week 1",
+  "Feb. 1 (Tu)", # Probabilistic Linear Regression
+  "Feb. 3 (Th)", # Linear Classification
+  "Feb. 4 (Fr)",
+  "Week 2",
+  "Feb. 8 (Tu)", # Probabilistic Linear Regression
+  "Feb. 10 (Th)", # Model Selection: Frequentist
+  "Feb. 11 (Fr)",
+  "Week 3",
+  "Feb. 15 (Tu)", # Model Selection: Bayesian
+  "Feb. 17 (Th)", # Neural Networks 1
+  "Feb. 18 (Fr)",
+  "Week 3",
+  "Feb. 22 (Tu)", # Neural Networks 2
+  "Feb. 24 (Th)", # SVM 1
+  "Feb. 25 (Fr)",
+  "Week 4",
+  "Mar. 1 (Tu)", # SVM 2
+  "Mar. 3 (Th)", # EthiCS
+  "Mar. 4 (Fr)",
+  "Week 5",
+  "Mar. 8 (Tu)", # Clustering
+  "Mar. 10 (Th)", # Midterm 1
+  "Mar. 11 (Fr)",
+  "Week 6",
+  "Mar. 15 (Tu)", # No class, wellness day
+  "Mar. 17 (Th)", # Mixture Models
+  "Mar. 18 (Fr)",
+  "Week 7",
+  "Mar. 22 (Tu)", # PCA
+  "Mar. 24 (Th)", # Topic Models
+  "Mar. 25 (Fr)",
+  "Week 8",
+  "Mar. 29 (Tu)", # Graphical Models
+  "Mar. 31 (Th)", # Inference for Bayes Nets
+  "Apr. 1 (Fr)",
+  "Week 9",
+  "Apr. 5 (Tu)", # HMMs
+  "Apr. 7 (Th)", # MDPs
+  "Apr. 8 (Fr)",
+  "Week 10",
+  "Apr. 12 (Tu)", # RL 1
+  "Apr. 14 (Th)", # No class, wellness day
+  "Apr. 15 (Fr)",
+  "Week 11",
+  "Apr. 19 (Tu)", # RL 2
+  "Apr. 21 (Th)", # Interpretability
+  "Apr. 22 (Fr)",
+  "Week 12",
+  "Apr. 26 (Tu)", # Midterm 2
 ]
 
 lectures:
-  - topic:
+  # Week 0
+  - topic: 
     subtopic:
     section: <a href="/cs181-web/sections#sec0">0. Math and Code Review</a>
     readings:
     hw:
     type: 'sec'
-  - topic:  #Jan 28
+  # Tu
+  - topic:
     subtopic: <a href="/cs181-web/recap1">Introduction</a>
     section:
     readings: 2.1, 2.2.1
-    release: <a href="/cs181-web/homework#hw1">HW 1 (Regression)</a> released
-  - topic: Regression #Jan 30
+    release: <a href="/cs181-web/homework#hw1">HW 1 released (regression)</a>
+  # Th
+  - topic: Regression
     subtopic: <a href="/cs181-web/recap2">Linear Regression</a>
     section:
     readings: 2.3-2.5, 2.6.1, 2.7.1
     hw:
+  # Fr
   - topic:
     subtopic:
     section:
     readings:
     hw:
     type: 'hw'
+
+  # Week 1
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec1">1. Linear Regression, MLE</a>
+    section: <a href="/cs181-web/sections#sec1">1. Linear regression</a>
     readings:
     hw:
     type: 'sec'
-  - topic: #Feb 4
+  # Tu
+  - topic: Regression
     subtopic: <a href="/cs181-web/recap3">Probabilistic Linear Regression</a>
     section:
     readings: 2.6.2, 2.6.3
     hw:
+  # Th
   - topic: Classification
     subtopic: <a href="/cs181-web/recap4">Linear Classification</a>
     section:
     readings: 3.1-3.5
     dl: HW 1 due
+  # Fr
   - topic:
     subtopic:
     section:
     readings:
-    release: HW 2 (Classification, Bayes) released
+    release: HW 2 released (classification and model selection)
     type: 'hw'
 
+  # Week 2
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec2">2. Probabilistic Classification</a>
+    section: <a href="/cs181-web/sections#sec2">2. Linear and probabilistic classification</a>
     readings:
     hw:
     type: 'sec'
-  - topic: #Feb 11
+  # Tu
+  - topic: Classification
     subtopic: <a href="/cs181-web/recap5">Probabilistic Linear Classification</a>
     section:
     readings: 3.6
     demos:
     hw:
-  - topic: Model Selection
-    subtopic: <a href="/cs181-web/recap6">Model Selection - Frequentist</a>
+  # Th
+  - topic: Model selection
+    subtopic: <a href="/cs181-web/recap6">Model Selection, Frequentist</a>
     section:
     readings: 2.7, 2.8
     hw:
+  # Fr
   - topic:
     subtopic:
     section:
     readings:
     hw:
     type: 'hw'
+
+  # Week 3
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec3">3.</a>
+    section: <a href="/cs181-web/sections#sec3">3. Model selection</a>
     readings:
     hw:
     type: 'sec'
-  - topic:
-    subtopic: <a href="/cs181-web/recap7">Model Selection - Bayesian</a>
+  # Tu
+  - topic: Model selection
+    subtopic: <a href="/cs181-web/recap7">Model Selection, Bayesian</a>
     section:
     readings: 2.8, 2.9
     hw:
-  - topic: Neural Networks
+  # Th
+  - topic: Neural networks
     subtopic: <a href="/cs181-web/recap8">Neural Networks 1</a>
     section:
     readings: 4.1-4.4, 4.6
     hw:
+  # Fr
   - topic:
     subtopic:
     section:
     readings:
     dl: HW 2 due
-    release: HW 3 (Bayes, Neural Networks) released
+    release: HW 3 released (Neural networks, model selection) 
     type: 'hw'
+
+  # Week 4
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec4">4.</a>
+    section: <a href="/cs181-web/sections#sec4">4. Neural networks</a>
     readings:
     hw:
     type: 'sec'
-  - topic: #Feb 27
+  # Tu
+  - topic: Neural networks
     subtopic: <a href="/cs181-web/recap9">Neural Networks 2</a>
     section:
     readings: 4.4
     hw:
-  - topic: SVMs #Mar 4
+  # Th
+  - topic: SVMs
     subtopic: <a href="/cs181-web/recap10">Support Vector Machines 1</a>
     section:
     readings: 5.1-5.3
     hw:
+  # Fr
   - topic:
     subtopic:
     section:
     readings:
     hw:
     type: 'hw'
+
+  # Week 5
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec5">5.</a>
+    section: Midterm 1 review
     readings:
     hw:
     type: 'sec'
-
-
-  - topic: #Mar 6
+  # Tu
+  - topic:
     subtopic: <a href="/cs181-web/recap11">Support Vector Machines 2</a>
     section:
     readings: 5.4
     hw:
+  # Th
   - topic:
-    subtopic: EthiCS Guest Lecture
+    subtopic: Midterm 1
     section:
     readings:
+    type: 'exam'
     hw:
+  # Fr
   - topic:
     subtopic:
     section:
     readings:
-    dl: HW 3 due
-    release: HW 4 (SVMs, Ethics, Clustering) released
     type: 'hw'
+
+  # Week 6
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec6">6.</a>
+    section: <a href="/cs181-web/sections#sec5">5. SVMs</a>
     readings:
     hw:
     type: 'sec'
-
-
-  - topic: Unsupervised Learning
+  # Tu
+  - topic: Unsupervised learning
     subtopic: <a href="/cs181-web/recap13">Clustering</a>
     section:
     readings: 6
     hw:
-  - topic: #Mar 13
-    subtopic: Midterm 1
+  # Th
+  - topic: 
+    subtopic: <a href="/cs181-web/recap14">Ethics</a>
     section:
     readings:
     demos:
     hw:
-    type: 'exam'
+  # Fr
   - topic:
     subtopic:
     section:
     readings:
     hw:
+    release: HW 4 released (ethics, clustering, SVM)
     type: 'hw'
+
+  # Week 7
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec7">7.</a>
+    section: <a href="/cs181-web/sections#sec7">7. K-means, HAC</a>
     readings:
     hw:
     type: 'sec'
-
-
+  # Tu
   - topic:
-    subtopic: Wellness day, no class
+    subtopic: Spring break
     section:
     readings:
     demos:
     hw: <a href="/cs181-web/homework#hw4">HW4 (SVM, Clustering, and Ethics)</a> released
-  - topic: #Mar 27
-    subtopic: <a href="/cs181-web/recap14">Mixture Models</a>
+  # Th
+  - topic:
+    subtopic: Spring break
     section:
     readings: 9.1-9.5
     demos:
     hw:
+  # Fr
   - topic:
+    subtopic: Spring break
     subtopic:
     section:
     readings:
-    dl: HW 4 due
-    release: HW 5 (Mixtures, EM, Graphical) released
     type: 'hw'
+
+  # Week 8
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec8">8.</a>
+    section: <a href="/cs181-web/sections#sec8">8. Mixture, EM</a>
     readings:
     hw:
     type: 'sec'
-
-
+  # Tu
   - topic:
-    subtopic: <a href="/cs181-web/recap15">Principal Component Analysis</a>
+    subtopic: <a href="/cs181-web/recap15">Mixture Models</a>
     section:
-    readings: 7
+    readings:
     hw:
+  # Th
   - topic:
-    subtopic: <a href="/cs181-web/recap16">Topic Models</a>
+    subtopic: <a href="/cs181-web/recap16">PCA</a>
     section:
-    readings: 9.6
+    readings:
     hw:
+  # Fr
+  - topic:
+    subtopic:
+    section:
+    readings:
+    release: HW 5 released (Mixtures, EM, graphical models)
+    type: 'hw'
 
+  # Week 9
+  - topic:
+    subtopic:
+    section: <a href="/cs181-web/sections#sec9">9. PCA, topic models</a>
+    readings:
+    hw:
+    type: 'sec'
+  # Tu
+  - topic:  GMs and BNs
+    subtopic: <a href="/cs181-web/recap17">Topic Models</a>
+    section:
+    readings: 8
+    hw:
+    type:
+  # Th
+  - topic:
+    subtopic: <a href="/cs181-web/recap18">Graphical Models</a>
+    section:
+    readings:
+    demos:
+    hw:
+  # Fr
   - topic:
     subtopic:
     section:
     readings:
     release: Practical released
     type: 'hw'
-
+  
+  # Week 10
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec9">9.</a>
+    section: <a href="/cs181-web/sections#sec10">10. Bayes nets, inference</a>
     readings:
     hw:
     type: 'sec'
-
-  - topic:  GMs and BNs
-    subtopic: <a href="/cs181-web/recap17">Graphical Models</a>
-    section:
-    readings: 8
-    hw:
-    type:
-  - topic: #Apr 10
-    subtopic: <a href="/cs181-web/recap18">Inference for Bayes Nets</a>
+  # Tu
+  - topic:
+    subtopic: <a href="/cs181-web/recap19">Inference for Bayes Nets</a>
     section:
     readings:
+    hw:
+    type:
+  # Th
+  - topic:
+    subtopic: <a href="/cs181-web/recap20">Hidden Markov Models</a>
+    section:
+    readings: 
     demos:
     hw:
+  # Fr
   - topic:
     subtopic:
     section:
     readings:
-    dl: HW 5 due
+    dl:
+    release:
     type: 'hw'
+
+  # Week 11
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec10">10.</a>
+    section: <a href="/cs181-web/sections#sec11">11. HMMs, Kalman filters</a>
     readings:
     hw:
     type: 'sec'
-
-  - topic:  #Apr 8
-    subtopic: <a href="/cs181-web/recap19">Hidden Markov Models</a>
-    section:
-    readings: 10
-    hw:
-    type:
-  - topic: #Apr 10
-    subtopic: <a href="/cs181-web/recap20">Markov Decision Processes</a>
+  # Tu
+  - topic: RL
+    subtopic: <a href="/cs181-web/recap21">Markov Decision Processes</a>
     section:
     readings: SB 3.1-3.6, SB 4.1-4.4 *
-    demos:
-    hw:
+    hw: 
+  # Th
   - topic:
-    subtopic:
-    section:
-    readings:
-    dl: Practical due
-    release: HW 6 (Inference, MDPs) released
-    type: 'hw'
-  - topic:
-    subtopic:
-    section: <a href="/cs181-web/sections#sec11">11.</a>
-    readings:
-    hw:
-    type: 'sec'
-
-  - topic: RL
-    subtopic: <a href="/cs181-web/recap21">Reinforcement Learning 1</a>
-    section:
-    readings:
-    hw: <a href="/cs181-web/homework#hw6">HW6 (Inference in Graphical Models, MDPs)</a> released
-  - topic: # Apr 17
     subtopic: Wellness day, no class
     section:
     readings:
     hw:
+  # Fr
   - topic:
     subtopic:
     section:
     readings:
-    hw:
+    hw: <a href="/cs181-web/homework#hw6">HW6 released (inference in graphical models, MDPs)</a>
     type: 'hw'
+
+  # Week 12
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec12">12.</a>
+    section: <a href="/cs181-web/sections#sec12">12. Reinforced learning, MDPs</a>
     readings:
     hw:
     type: 'sec'
-
+  # Tu
   - topic:
     subtopic: <a href="/cs181-web/recap22">Reinforcement Learning 2</a>
     section:
     readings: SB 1.1-1.4, SB 6.1-6.5 *
     hw:
-  - topic: # Apr 24
+  # Th
+  - topic:
     subtopic: <a href="/cs181-web/recap23">Interpretability</a>
     section:
     readings:
     demos:
     hw:
     type:
+  # Fr
   - topic:
     subtopic:
     section:
     readings:
     dl: HW 6 due
     type: 'hw'
+
+  # Week 13
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec13">13.</a>
+    section: Midterm 2 review
     readings:
     hw:
     type: 'sec'
-
-  - topic: # Apr 29
+  # Tu
+  - topic:
     subtopic: Midterm 2
     section:
     readings:
