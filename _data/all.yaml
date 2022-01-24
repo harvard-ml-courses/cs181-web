@@ -264,6 +264,7 @@ lectures:
     section:
     readings:
     hw:
+    dl: HW 3 due
     release: HW 4 released (ethics, clustering, SVM)
     type: 'hw'
 
@@ -320,6 +321,7 @@ lectures:
     subtopic:
     section:
     readings:
+    dl: HW 4 due
     release: HW 5 released (Mixtures, EM, graphical models)
     type: 'hw'
 
@@ -378,7 +380,7 @@ lectures:
     subtopic:
     section:
     readings:
-    dl:
+    dl: HW 5 due
     release:
     type: 'hw'
 
