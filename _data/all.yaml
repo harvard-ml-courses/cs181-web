@@ -17,7 +17,7 @@ ohs:
 
 
 dates: [
-  ""
+  "",
   "Week 0",
   "Jan. 25 (Tu)", # Introduction, Release HW 1
   "Jan. 27 (Th)", # Linear Regression
