@@ -120,13 +120,13 @@ lectures:
     subtopic: <a href="/cs181-web/recap4">Linear Classification</a>
     section:
     readings: 3.1-3.5
-    dl: HW 1 due
   # Fr
   - topic:
     subtopic:
     section:
     readings:
-    release: HW 2 released (classification and model selection)
+    dl: HW 1 due
+    release:
     type: 'hw'
 
   # Week 2
@@ -154,6 +154,7 @@ lectures:
     subtopic:
     section:
     readings:
+    release: <a href="/cs181-web/homework#hw2">HW 2 released (classification and model selection)</a>
     hw:
     type: 'hw'
 
@@ -181,8 +182,6 @@ lectures:
     subtopic:
     section:
     readings:
-    dl: HW 2 due
-    release: HW 3 released (Neural networks, model selection) 
     type: 'hw'
 
   # Week 4
@@ -209,7 +208,8 @@ lectures:
     subtopic:
     section:
     readings:
-    hw:
+    dl: HW 2 due
+    release: <a href="/cs181-web/homework#hw3">HW 3 released (Neural networks, model selection) /a>
     type: 'hw'
 
   # Week 5
@@ -266,7 +266,7 @@ lectures:
     readings:
     hw:
     dl: HW 3 due
-    release: HW 4 released (ethics, clustering, SVM)
+    release: <a href="/cs181-web/homework#hw4">HW 4 released (ethics, clustering, SVM)</a>
     type: 'hw'
 
   # Week 7
@@ -323,7 +323,7 @@ lectures:
     section:
     readings:
     dl: HW 4 due
-    release: HW 5 released (Mixtures, EM, graphical models)
+    release: <a href="/cs181-web/homework#hw5">HW 5 released (Mixtures, EM, graphical models)</a>
     type: 'hw'
 
   # Week 9
@@ -400,7 +400,7 @@ lectures:
     hw: 
   # Th
   - topic:
-    subtopic: Wellness day, no class
+    subtopic:
     section:
     readings:
     hw:
@@ -409,7 +409,8 @@ lectures:
     subtopic:
     section:
     readings:
-    hw: <a href="/cs181-web/homework#hw6">HW6 released (inference in graphical models, MDPs)</a>
+    dl: Practical due
+    release: <a href="/cs181-web/homework#hw6">HW6 released (inference in graphical models, MDPs)</a>
     type: 'hw'
 
   # Week 12
@@ -438,7 +439,7 @@ lectures:
     subtopic:
     section:
     readings:
-    dl: HW 6 due
+    dl:
     type: 'hw'
 
   # Week 13
@@ -453,7 +454,17 @@ lectures:
     subtopic: Midterm 2
     section:
     readings:
-    demos:
     hw:
-    type: 'exam'
-
+    type: 'exam'  # Tu
+  - topic:
+    subtopic: 
+    section:
+    readings:
+    hw:
+  # Fr
+  - topic:
+    subtopic:
+    section:
+    readings:
+    dl: HW 6 due
+    type: 'hw'
