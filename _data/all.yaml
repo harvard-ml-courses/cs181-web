@@ -19,59 +19,61 @@ ohs:
 dates: [
   "",
   "Week 0",
-  "Jan. 25 (Tu)", # Introduction, Release HW 1
-  "Jan. 27 (Th)", # Linear Regression
+  "Jan. 25 (Tu)",
+  "Jan. 27 (Th)",
   "Jan. 28 (Fr)",
   "Week 1",
-  "Feb. 1 (Tu)", # Probabilistic Linear Regression
-  "Feb. 3 (Th)", # Linear Classification
+  "Feb. 1 (Tu)",
+  "Feb. 3 (Th)",
   "Feb. 4 (Fr)",
   "Week 2",
-  "Feb. 8 (Tu)", # Probabilistic Linear Regression
-  "Feb. 10 (Th)", # Model Selection: Frequentist
+  "Feb. 8 (Tu)",
+  "Feb. 10 (Th)",
   "Feb. 11 (Fr)",
   "Week 3",
-  "Feb. 15 (Tu)", # Model Selection: Bayesian
-  "Feb. 17 (Th)", # Neural Networks 1
+  "Feb. 15 (Tu)",
+  "Feb. 17 (Th)",
   "Feb. 18 (Fr)",
   "Week 3",
-  "Feb. 22 (Tu)", # Neural Networks 2
-  "Feb. 24 (Th)", # SVM 1
+  "Feb. 22 (Tu)",
+  "Feb. 24 (Th)",
   "Feb. 25 (Fr)",
   "Week 4",
-  "Mar. 1 (Tu)", # SVM 2
-  "Mar. 3 (Th)", # EthiCS
+  "Mar. 1 (Tu)",
+  "Mar. 3 (Th)",
   "Mar. 4 (Fr)",
   "Week 5",
-  "Mar. 8 (Tu)", # Clustering
-  "Mar. 10 (Th)", # Midterm 1
+  "Mar. 8 (Tu)",
+  "Mar. 10 (Th)",
   "Mar. 11 (Fr)",
   "Week 6",
-  "Mar. 15 (Tu)", # No class, wellness day
-  "Mar. 17 (Th)", # Mixture Models
+  "Mar. 15 (Tu)",
+  "Mar. 17 (Th)",
   "Mar. 18 (Fr)",
   "Week 7",
-  "Mar. 22 (Tu)", # PCA
-  "Mar. 24 (Th)", # Topic Models
+  "Mar. 22 (Tu)",
+  "Mar. 24 (Th)",
   "Mar. 25 (Fr)",
   "Week 8",
-  "Mar. 29 (Tu)", # Graphical Models
-  "Mar. 31 (Th)", # Inference for Bayes Nets
+  "Mar. 29 (Tu)",
+  "Mar. 31 (Th)",
   "Apr. 1 (Fr)",
   "Week 9",
-  "Apr. 5 (Tu)", # HMMs
-  "Apr. 7 (Th)", # MDPs
+  "Apr. 5 (Tu)",
+  "Apr. 7 (Th)",
   "Apr. 8 (Fr)",
   "Week 10",
-  "Apr. 12 (Tu)", # RL 1
-  "Apr. 14 (Th)", # No class, wellness day
+  "Apr. 12 (Tu)",
+  "Apr. 14 (Th)",
   "Apr. 15 (Fr)",
   "Week 11",
-  "Apr. 19 (Tu)", # RL 2
-  "Apr. 21 (Th)", # Interpretability
+  "Apr. 19 (Tu)",
+  "Apr. 21 (Th)",
   "Apr. 22 (Fr)",
   "Week 12",
-  "Apr. 26 (Tu)", # Midterm 2
+  "Apr. 26 (Tu)",
+  "Apr. 28 (Th)",
+  "Apr. 29 (Fr)",
 ]
 
 lectures:
@@ -209,7 +211,7 @@ lectures:
     section:
     readings:
     dl: HW 2 due
-    release: <a href="/cs181-web/homework#hw3">HW 3 released (Neural networks, model selection) /a>
+    release: <a href="/cs181-web/homework#hw3">HW 3 released (Neural networks, model selection)</a>
     type: 'hw'
 
   # Week 5
