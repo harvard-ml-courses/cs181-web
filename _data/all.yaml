@@ -86,9 +86,9 @@ lectures:
     type: 'sec'
   # Tu
   - topic:
-    subtopic: <a href="/cs181-web/recaps/lec1">Introduction</a>
+    subtopic: <a href="/cs181-web/recaps/lec1">Welcome to CS181</a>
     section:
-    readings: 2.1, 2.2.1
+    readings: Ch 1
     release: <a href="/cs181-web/homework#hw1">HW 1 released (regression)</a>
   # Th
   - topic: Regression
