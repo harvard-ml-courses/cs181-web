@@ -18,7 +18,7 @@ weight: 0
 
       <br>
 
-      <h3>Lecture 2 Summary</h3>
+      <h2>Lecture 2 Summary</h2>
 
       <ul>
         <li><a href="#recap2_1">What is Regression?</a></li>
@@ -26,7 +26,7 @@ weight: 0
         <li><a href="#recap2_3">Parametric Methods</a></li>
       </ul>
 
-      <h2 id="recap2_0">Relevant Videos</h2>
+      <h2>Relevant Videos</h2>
       <ul>
         <li><a href="https://www.youtube.com/watch?v=J8w2iMF5Hak&list=PLrH1CxyJ7Vqb-pHzfUClJNXBDAKajHE74&index=2&t=0s">Linear Regression</a></li>
         <li><a href="https://www.youtube.com/watch?v=Jy4EWpdw3z4&list=PLrH1CxyJ7Vqb-pHzfUClJNXBDAKajHE74&index=3&t=0s">Regularization</a></li>
@@ -57,7 +57,7 @@ weight: 0
       
       <br><br>
 
-      One algorithm is $K$-nearest neighbors. First we start with a training dataset of past datapoints which are properly labelled: $$\mathcal D = \{(x_n, y_n)\}_{n=1}^N = \{(x_1, y_1), \ldots, (x_N, y_N) \}$$. We predict some label $\hat y^*$ for an example $x^*$ by
+      One algorithm is $K$-nearest neighbors. First we start with a training dataset of past datapoints which are properly labelled: $$\mathcal D = \{(x_n, y_n)\}_{n=1}^N = \{(x_1, y_1), \ldots, (x_N, y_N) \}.$$ We predict some label $\hat y^*$ for an example $x^*$ by
       <ol>
         <li>finding the $K$ closest training examples $\{ x_k : k \in \mathcal{K}^* \}$ to $x^*$,</li>
         <li>then calculating $\hat y^* = \frac{1}{K} \sum_{k \in \mathcal{K}^*}^K y_k$.</li>
@@ -101,6 +101,9 @@ weight: 0
 
       </h3>Linear Regression</h3>
       Consider our training data $\{ (\mathbf x_n, y_n) \}_{n=1}^N$. Our goal is to learn a function $f(\mathbf x, \mathbf w)$ that predicts our labels (so $\hat y^* = f(\mathbf x^*, \mathbf w)$. How do we identify the best set of parameters $\mathbf w^*$? As a general formula for regression, we
+
+      <br><br>
+
       <ul>
         <li>choose a loss function $\mathcal L : \mathbb R^W \to \mathbb R$,</li>
         <li>choose a class of functions $f : \mathbb R^D \times \mathbb R^W \to \mathbb R$,</li>
@@ -133,55 +136,53 @@ weight: 0
       <br><br>
 
       Generally, we use gradient descent in order to approach a better setting of our weights: 
-      $$\textbf{w}^{(t+1)} = \textbf{w}^{(t)} - \eta\nabla_\mathbf{w} \mathcal{L}(\textbf{w}) = \textbf{w}^{(t)} - \eta\sum_n ((y_n - \textbf{w}^T\textbf{x}_n)(-\textbf{x}_n))$$
+      $$\mathbf{w}^{(t+1)} = \mathbf{w}^{(t)} - \eta\nabla_\mathbf{w} \mathcal{L}(\mathbf{w}) = \mathbf{w}^{(t)} - \eta\sum_n ((y_n - \mathbf{w}^T\mathbf{x}_n)(-\mathbf{x}_n))$$
       
       <br><br>
 
       But today, in the case of linear regression, there is an analytic solution (something neat and in closed form). For now, we are hand-wavingly writing this same gradient in matrix notation: $$\nabla_\mathbf{w} \mathcal L(\mathbf w) = -\mathbf X \mathbf y^\top + \mathbf X \mathbf X^\top \mathbf{w}.$$
-      In this version of the derivation, there are D dimensions in the data and N data points. $\textbf{y}$ is an $N$-dimensional column vector, $\textbf{w}$ is a $(D+1)$-dimensional column vector of weights and $\textbf{X}$ is a $N \times (D+1)$ matrix of data such that the $n^{\text{th}}$ row is given by $\textbf{x}_n^T$. $\textbf{X}$ is called our design matrix. Note that in order to include our bias, we can set one entire feature (column of the design matrix) to 1, allowing us to derive the appropriate value in W for the bias. First we start with the residuals squared, but in matrix form.
-      $$L(\textbf{w}) = \frac{1}{2}(\textbf{y} - \textbf{X}\textbf{w})^T(\textbf{y} - \textbf{X}\textbf{w})$$
+      In this version of the derivation, there are D dimensions in the data and N data points. $\mathbf{y}$ is an $N$-dimensional column vector, $\mathbf{w}$ is a $(D+1)$-dimensional column vector of weights and $\mathbf{X}$ is a $N \times (D+1)$ matrix of data such that the $n^{\text{th}}$ row is given by $\mathbf{x}_n^T$. $\mathbf{X}$ is called our design matrix. Note that in order to include our bias, we can set one entire feature (column of the design matrix) to 1, allowing us to derive the appropriate value in W for the bias. First we start with the residuals squared, but in matrix form.
+      $$L(\mathbf{w}) = \frac{1}{2}(\mathbf{y} - \mathbf{X}\mathbf{w})^T(\mathbf{y} - \mathbf{X}\mathbf{w})$$
 
       Let us take the gradient:
-      $$\frac{\partial \mathcal{L}(\textbf{w})}{\partial \textbf{w}} = -2\textbf{X}^T(\textbf{y}-\textbf{X}\textbf{w})$$
+      $$\frac{\partial \mathcal{L}(\mathbf{w})}{\partial \mathbf{w}} = -2\mathbf{X}^T(\mathbf{y}-\mathbf{X}\mathbf{w})$$
 
 
-      We use the formula $\frac{ \partial (\textbf{a} -\textbf{C} \textbf{b})^T \textbf{D} (\textbf{a} - \textbf{C} \textbf{b})}{\partial \textbf{b}} = -2 \textbf{C}^T \textbf{D} (\textbf{a} - \textbf{C}\textbf{b})$ (equation 64 in the cookbook) where $\textbf{D}$ must be symmetric. $\textbf{D}$ is the identity matrix in our case.
+      We use the formula $\frac{ \partial (\mathbf{a} -\mathbf{C} \mathbf{b})^T \mathbf{D} (\mathbf{a} - \mathbf{C} \mathbf{b})}{\partial \mathbf{b}} = -2 \mathbf{C}^T \mathbf{D} (\mathbf{a} - \mathbf{C}\mathbf{b})$ (equation 64 in the cookbook) where $\mathbf{D}$ must be symmetric. $\mathbf{D}$ is the identity matrix in our case.
 
       Note: The derivative can also be taken by first expanding the loss function and computing the derivatives term by term.
 
-      Now we set it to 0 and find $\textbf{w}^*$:
+      Now we set it to 0 and find $\mathbf{w}^*$:
           $$\begin{align*}
-              0 &= -2\textbf{X}^T\textbf{y} + 2\textbf{X}^T\textbf{X}\textbf{w}^* \\
-              \textbf{X}^T\textbf{X}\textbf{w}^* &= \textbf{X}^T\textbf{y} \\
-              \textbf{w}^* &= (\textbf{X}^T\textbf{X})^{-1}\textbf{X}^T\textbf{y}
+              0 &= -2\mathbf{X}^T\mathbf{y} + 2\mathbf{X}^T\mathbf{X}\mathbf{w}^* \\
+              \mathbf{X}^T\mathbf{X}\mathbf{w}^* &= \mathbf{X}^T\mathbf{y} \\
+              \mathbf{w}^* &= (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}
             \end{align*}
           $$
 
-      For a given datapoint $\textbf{x}$, the corresponding prediction is
+      For a given datapoint $\mathbf{x}$, the corresponding prediction is
           $$\begin{align*}
-            \hat{y} &= \left((\textbf{X}^T\textbf{X})^{-1}\textbf{X}^T\textbf{y}\right)^T\textbf{x} \\
-            \hat{y} &= (\textbf{X}^T\textbf{y})^T(\textbf{X}^T\textbf{X})^{-T}\textbf{x} \\
-            \hat{y} &= (\textbf{X}^T\textbf{y})^T(\textbf{X}^T\textbf{X})^{-1}\textbf{x}
+            \hat{y} &= \left((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}\right)^T\mathbf{x} \\
+            \hat{y} &= (\mathbf{X}^T\mathbf{y})^T(\mathbf{X}^T\mathbf{X})^{-T}\mathbf{x} \\
+            \hat{y} &= (\mathbf{X}^T\mathbf{y})^T(\mathbf{X}^T\mathbf{X})^{-1}\mathbf{x}
             \end{align*}
           $$
 
-      Note: to take the inverse, we need $\textbf{X}$ to have full column rank, which makes $\textbf{X}^T\textbf{X}$ positive definite, and guarantees an inverse. The interpretation is that the features will not be co-linear (the redundant encoding problem). We also find the second order condition (second derivative) $\frac{\partial^2}{\partial \textbf{w}^2} L(\textbf{w})$, and ensure that it is positive definite.
+      Note: to take the inverse, we need $\mathbf{X}$ to have full column rank, which makes $\mathbf{X}^T\mathbf{X}$ positive definite, and guarantees an inverse. The interpretation is that the features will not be co-linear (the redundant encoding problem). We also find the second order condition (second derivative) $\frac{\partial^2}{\partial \mathbf{w}^2} L(\mathbf{w})$, and ensure that it is positive definite.
 
       <br>
-      $(\textbf{X}^T\textbf{y})^T$ is the correlation between $\textbf{x}$ and $y$, so if the correlation is high, the weights should be higher since you should weigh $\textbf{x}$ by more in order to better predict $y$. $(\textbf{X}^T\textbf{X})$ is the variation in $\textbf{x}$.
+      $(\mathbf{X}^T\mathbf{y})^T$ is the correlation between $\mathbf{x}$ and $y$, so if the correlation is high, the weights should be higher since you should weigh $\mathbf{x}$ by more in order to better predict $y$. $(\mathbf{X}^T\mathbf{X})$ is the variation in $\mathbf{x}$.
 
       <br>
       <br>
 
       <u>Linear Algebra View:</u>
 
-      We have $D$ $\textbf{x}$-vectors living in $N$-dimensions. By taking a linear combination of $D$ vectors, we are trying to produce a length $N$ vector $\hat{\textbf{y}}$. Our $\hat{\textbf{y}}$ is essentially the closest projection of $\textbf{y}$ onto the row space of $\textbf{X}$.
+      We have $D$ $\mathbf{x}$-vectors living in $N$-dimensions. By taking a linear combination of $D$ vectors, we are trying to produce a length $N$ vector $\hat{\mathbf{y}}$. Our $\hat{\mathbf{y}}$ is essentially the closest projection of $\mathbf{y}$ onto the row space of $\mathbf{X}$.
 
       <br><br>
 
-      The breakdown of $\mathbf{w}$ makes sense, as we scale down the weight if there is a lot of input variance and increase the variance of input to output.
-      
-      <br><br>
+      <h3>Basis Regression</h3>
 
       This may seem too simple: how many patterns in real life perfectly linear? A key extension of this is basis regression. Basically, convert an input $\mathbf x$ to another vector $\phi(\mathbf x)$ where $\phi : \mathbb R^D \to \mathbb R^{D'}$ is a basis function. Then we use $\phi(\mathbf x)$ we perform linear regression in the new input space $\mathbb R^{D'}$. To model a parabolic curve, therefore, we can use the transform $x \mapsto [x, x^2]^\top$.
       
