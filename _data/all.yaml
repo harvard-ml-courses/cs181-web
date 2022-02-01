@@ -127,7 +127,6 @@ lectures:
     subtopic:
     section:
     readings:
-    dl: HW 1 due
     release:
     type: 'hw'
 
@@ -156,6 +155,7 @@ lectures:
     subtopic:
     section:
     readings:
+    dl: HW 1 due
     release: <a href="/cs181-web/homework#hw2">HW 2 released (classification and model selection)</a>
     hw:
     type: 'hw'
