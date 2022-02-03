@@ -226,16 +226,17 @@ lectures:
     type: 'sec'
   # Tu
   - topic:
-    subtopic: <a href="/cs181-web/recaps/lec11">Support Vector Machines 2</a>
-    section:
-    readings: 5.4
-    hw:
-  # Th
-  - topic:
     subtopic: Midterm 1
     section:
-    readings:
+    readings: 
     type: 'exam'
+    hw:
+  # Th
+  - topic: 
+    subtopic: <a href="/cs181-web/recaps/lec14">Ethics</a>
+    section:
+    readings: 
+    type: 
     hw:
   # Fr
   - topic:
@@ -252,16 +253,16 @@ lectures:
     hw:
     type: 'sec'
   # Tu
+  - topic: SVMs 2
+    subtopic: <a href="/cs181-web/recaps/lec11">Support Vector Machines 2</a>
+    section:
+    readings: 5.4
+    hw:
+  # Th
   - topic: Unsupervised learning
     subtopic: <a href="/cs181-web/recaps/lec13">Clustering</a>
     section:
     readings: 6
-    hw:
-  # Th
-  - topic: 
-    subtopic: <a href="/cs181-web/recaps/lec14">Ethics</a>
-    section:
-    readings:
     demos:
     hw:
   # Fr
