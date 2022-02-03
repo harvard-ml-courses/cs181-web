@@ -6,27 +6,32 @@ weight: 0
 ---
 
 <section class="main-container text">
-    <div class="main">
-      <h4>Date: February 4, 2021 (<a href="https://forms.gle/8TFKTaWwWHVcyzb59" target="_blank">Concept Check</a>, <a href="https://docs.google.com/forms/d/e/1FAIpQLScMkdwMaClV2MGjaTKzFSXa5djB-5IDU9ro1S-GwK9EOQKTXQ/viewanalytics" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
-      <h4>Relevant Textbook Sections: 3.1 - 3.5</h4>
-      <h4>Cube: Supervised, Discrete, Nonprobabilistic</h4>
+  <div class="main">
+    <h4>Date: February 3, 2022</h4>
+    <h4>Relevant Textbook Sections: 3.1 - 3.5</h4>
+    <h4>Cube: Supervised, Discrete, Nonprobabilistic</h4>
 
-      <br>
+    <br>
 
-      <h4><a href="https://harvard.zoom.us/rec/play/TC4__bcb0wjhX9rV_LV6olCIIyrb8QhmwEE1LT911hoV8vAj0QlixTPoK6gcclktG9a8W_l_K1zXhIr-.eIUc28x31MYdFQg1">Lecture Video</a></h4>
-      <h4><a href="files/lecture4_slides.pdf" target="_blank">Slides</a></h4>
-      <h4><a href="files/lecture4_ipad.pdf" target="_blank">iPad Notes</a></h4>
+    <h4><a href="https://canvas.harvard.edu/courses/100256/external_tools/38806">Lecture Video</a></h4>
 
-      <h3>Lecture 4 Summary</h3>
+
+    <h2>Announcements</h2>
+    <ul>
+      <li>Again, HW is extended and is due Feb 11</li>
+      <li>Midterm 1 has been moved to Mar 1</li>
+    </ul>
+
+    <h2>Lecture 4 Summary</h3>
 
      <ul>
-        <li><a href="#recap4_1">Introduction</a></li>
-        <li><a href="#recap4_2">Classification vs Regression</a></li>
-        <li><a href="#recap4_3">Linear Classification</a></li>
-        <li><a href="#recap4_4">Metrics</a></li>
+        <li><a href="#1">Classification vs Regression</a></li>
+        <li><a href="#2">Non-Parametric Classification</a></li>
+        <li><a href="#3">Linear Classification</a></li>
+        <li><a href="#4">Metrics</a></li>
       </ul>
 
-      <h2 id="recap2_1">Relevant Videos</h2>
+      <h2 >Relevant Videos</h2>
       <ul>
         <li><a href="https://www.youtube.com/watch?v=Y6DA7XFh_io&list=PLrH1CxyJ7Vqb-pHzfUClJNXBDAKajHE74&index=5&t=0s">Gradient descent</a></li>
         <li><a href="https://www.youtube.com/watch?v=iUzy4GEmSN4&list=PLrH1CxyJ7Vqb-pHzfUClJNXBDAKajHE74&index=6&t=0s">Binary Linear Classification</a></li>
@@ -34,206 +39,97 @@ weight: 0
 
       <br>
 
-      <h2 id="recap4_1">Introduction</h2>
-
-      The previous lecture, we covered probabilistic regression. As a recap, in probabilistic regression, a generative model
-      allows us to perform different types of inference such as posterior inference for weight parameters as well as
-      posterior predictive for new data.
-
-      <br>
-      <br>
-
-      This lecture, we covered linear classification. The goal of classification is to identify a category $y$ given $\mathbf{x}$,
-      rather than continuous $y$.
-
-      <h2 id="recap4_2">Classification vs Regression</h2>
-      Conceptually classification is not too different from regression. We follow the same general forms:
-
-      <ol>
-        <li>Choose a model (linear vs non-linear boundary)</li>
-        <li>Choose a loss function
-            <br>
-            We will write out $\hat{y} \in C_1,\cdots,C_K$.
-            <br>
-            Depending on the problem, we encode $\hat{y}$ as $0/1$, $+/-$ or
-            one-hot vectors $\begin{pmatrix} 0 & 0 & 1 & 0 \end{pmatrix}$
-        </li>
-      </ol>
-
-      Today's problem involves predicting $\hat{y}$ for a new example $x$. We are given the dataset $D = \{(x_1, y_1), (x_2, y_2), (x_3, y_3), \dots, (x_n, y_n) \}$, where $x_i \in \mathbb{R}$ and $y_i \in \{-1, 1\}$.
-
-      <h2>Method 1 (Review): Non-Parametric Models</h2>
-      We can still use KNN for classification by returning the majority vote of the neighbors of $\mathbf{x}$. We can also use kernel methods. The advantage of using kernel methods is that it is super flexible. However, it can also be very slow on large datasets (which happens at prediction time) and it can be difficult to interpret.
-
-      <h2 id="recap4_3">Method 2: Linear Classification</h2>
-
-      <h3>Choose a Model : Linear Boundary </h3>
-      We introduce a new parametric model. It is simple but we can use a basis $\phi$ to obtain complex boundaries of separation.
-      $$\hat{y} = \text{sign}(\mathbf{w}^T\mathbf{x} + w_0)$$
-
-      Before deciding on a loss, let's just understand this model and what it does:
-
-      We introduce a discriminant function: $h(x,w) = \mathbf{w}^T \mathbf{x} + w_0$. We predict:
-      \begin{equation}
-        \hat{y}=\left\{
-        \begin{array}{@{}ll@{}}
-          +1, & \text{if}\ h(\mathbf{x}, \mathbf{w}) > 0 \\
-          -1, & \text{otherwise}
-        \end{array}\right.
-      \end{equation}
-
-      and we take the sign of the discriminant function for any particular point to predict the associated classification of $y$.
-
-      The decision boundary between the two sets of training data is where the discriminant is equal to 0, and our goal is to optimize the discriminant.
-
-      Consider the decision boundary $\mathbf{w}^T\mathbf{x} + w_0 = 0$:
-      <br>
-      In the 2D case:
-      <br>
-      $$\begin{align*}
-      w_1x_1 + w_2x_2 + w_0 &= 0 \\
-      x_2 &= -\frac{w_1}{w_2}x_1 - \frac{w_0}{w_2}
-      \end{align*}$$
-
-      This is the equation of a line, so we have a linear boundary!
-
-      <br>
-      <br>
-      Generalizing: Consider a vector $\mathbf{s}$ connecting two points $\mathbf{x_1}$ and $\mathbf{x_2}$ on the boundary (
-      $\mathbf{s} = \mathbf{x_2} - \mathbf{x_1}$)
-
-      $$\begin{align*}
-      \mathbf{s}\cdot \mathbf{w} &= \mathbf{x_2}\cdot \mathbf{w} - \mathbf{x_1} \cdot \mathbf{w} \\
-      &= \mathbf{x_2}\cdot \mathbf{w} + w_0 - \mathbf{x_1} \cdot \mathbf{w} - w_0\\
-      &= 0 - 0 = 0
-      \end{align*}
-      $$
-      $\mathbf{s}$ is orthogonal to $\mathbf{w}$.
-
-      <br>
-      <br>
-
-      This implies that $\mathbf{w}$ is orthogonal to the boundary. $w_0$ gives the offset.
-
-      <h3>Choose a Loss Function : Hinge Loss</h3>
-
-      Let's consider the the $0/1$ function:
-      $$
-      \ell_{0/1}(z) =
-      \left\{ \begin{array}{cc}
-      1 \quad& z > 0 \\
-      0 \quad& \text{else}
-      \end{array} \right.
-      $$
-      and the loss function
-      $$\mathcal{L}(\textbf{w}) = \sum_{n=1}^N \ell_{0/1}\left(-y_n(\mathbf{w}^T\mathbf{x}_n + w_0)\right)$$
-      that penalizes if the signs of $y_n$ and $\mathbf{w}^T\mathbf{x}_n + w_0$ do not match.
-
-      <br>
-      At first blush, this loss function makes sense. It scales with the number of misclassified points, an intuitive metric for understanding the loss of a classifier. There is however an issue with this loss. It has uninformative gradient. We are either right or wrong. Taking the gradient will yield 0 at all points (except for the origin), regardless of whether a point was correctly classified. As such, we look for a new loss function that has a more informative gradient.
-
-      <br>
-      Student question: How do you initialize the weight matrix, $\mathbf{w}$? Answer: you can choose any initial weight matrix. In the next section, we show how to reduce the loss by tuning the weight matrix.
-
-      <br><br>
-      Let us now consider hinge loss or linear rectifier function. Let us define $z = \mathbf{w}^T \mathbf{x} + w_0$.
-      $$
-      \ell_{\text{hinge}}(z) =
-      \left\{ \begin{array}{cc}
-      z \quad& z > 0 \\
-      0 \quad& \text{else}
-      \end{array} \right. = \max(0,z)
-      $$
-      and the loss function
-      $$\begin{align*}
-      \mathcal{L}(\textbf{w}) &= \sum_{n=1}^N \ell_{\text{hinge}}\left(-y_n(\mathbf{w}^T\mathbf{x}_n + w_0)\right) \\
-      &= -\sum_{m \in S}y_m(\mathbf{w}^T\mathbf{x}_m + w_0)
-      \end{align*}
-      $$
-      where the set $S$ consists of all $n$ such that $\text{sign}(y_n) \neq \text{sign}(\mathbf{w}^T\mathbf{x}_n + w_0)$
-      <br><br>
-      Now, we can take gradients!
-      $$\frac{\partial}{\partial \mathbf{w}}\mathcal{L}(\textbf{w}) = -\sum_{m \in S}y_m\mathbf{x}_m$$
-      Note: We have absorbed the bias term into $\mathbf{w}$ here. Also, our loss function is convex. For each data point we try to optimize, we are trying to improve the loss. By improving the loss on individual data points (which can each be thought of as a separate optimization problem), we are improving the loss over the entire dataset.
-
+      <h2 id="1">Classification vs Regression</h2>
+      We are still in the setting where given features $x \in \mathbb R^D$, we hope to predict some label $y \in \mathcal Y$ where $\mathcal Y$ is our output space. Until now, we have been predicting continuous scalar labels $y \in \mathbb R$ by using non-probablistic and probalistic regression. In classification, however, we instead predict discrete labels $y \in \{ C_k \}_{k=1}^K$ where $C_1, \ldots, C_K$ are our discrete possible classes.
       <br><br>
 
-      Student Question: If the data is separable, does this algorithm choose the decision boundary that best separates the data? Because the gradient of the loss is only non-zero when the point is mis-classified, any decision boundary that separates the points will have zero loss. The algorithm here does not discern between the decision boundaries that all have zero loss (even if we can visually see that the decision boundary works but is not optimal).
+      For example, based on an image, we can classify what species a bug is. In this example, our class labels may look like $$\mathcal Y = \{\text{Fly}, \text{Ant}, \text{Bee}\}.$$
+      <br><br>
+      
+      Obviously, we need a way to encode these discrete classes mathematically, and there are multiple ways to do this You may see
+      $$\mathcal Y = \{C_1, \ldots, C_k\}$$
+      as a general form. If there are only two classes, then you may see either
+      $$\mathcal Y = \{-1, +1\} \quad \text{or} \quad \mathcal Y = \{0, 1\}.$$
+      An example $x_n$ is "positive" if it belongs in the positive class if $y_n = -1$ or "negative" if $y_n = +1$. In many settings, we use "one-hot encoding" which maps each class label $C_k$ to a vector $y \in \mathbb R^K$ of 0 everywhere except a 1 in the $k$-th element:
+      $$\mathcal Y = \left\{ \begin{bmatrix}1\\0\\\vdots\\0\end{bmatrix},\, \begin{bmatrix}0\\1\\\vdots\\0\end{bmatrix},\, \ldots,\, \begin{bmatrix}0\\0\\\vdots\\1\end{bmatrix} \right\}$$
+      <br><br>
+      
+      We have these different representations because each is convinient for a different setting. Conceptually, all of these are the same! They all say that labels $y$ are discrete.
+      <br><br>
+      
+      <h2 id="2">Non-Parametric Classification</h2>
+      We still have to ask "what is our model?" and "what is our objective?". This second question asks what it means for one model to be better than another at the task of classificaiton. 
       <br><br>
 
-      <h4> Comments: </h4>
-      <ol>
-        <li> Convex and differentiable function can be minimized via gradient descent </li>
-        <li>Convex optimization is polynomially solvable</li>
-      </ol>
-
-      <h4>How to solve for $\mathbf{w}^*$</h4>
-      We can use <strong>stochastic</strong> gradient descent to optimize $\mathbf{w}$ : Use a <stong>mini-batch</stong> of
-      our data (good if datatset is larger; noisier gradient though!). Using SGD requires using a variable step size for gradient descent!
-
+      Why don't we reuse regression? Well, KNN still works actually. We can find our $K$-nearest neighbors and instead of averaging their labels, we take the majority.
       <br><br>
-      What if we took just <strong>one</strong> (incorrectly classified) datum:
-      $$\mathcal{L}^{(i)}(\mathbf{w}) = -y_i\mathbf{w}^T\mathbf{x}_i$$ and
-      $$\mathbf{w} \leftarrow \mathbf{w} + \eta y_i \mathbf{x}_i$$
-      This is the 1958 <strong>Perceptron</strong> algorithm : if $\hat{y} = y_n$, do nothing; else do above, until no error.
-      This converges if and only if the data are linearly separable in the feature space.
-
-      <h4> Extensions: </h4>
-
-      <ol>
-        <li>We can also think about multi-class classifications, where $y_k \in {C_1, \dots, C_k}$ (ie. the output variable can be classified into multiple different groups). You can perform "all vs one" training by training $k$ different binary classifiers, before taking $\textbf{argmax}_k h_(\mathbf{x}, \textbf{w})$. </li>
-        <li>You can perform basis transforms to solve classification problems that don't have a linear decision boundary.</li>
-      </ol>
-
-      <!-- <h3>A Different Loss : Fisher's Discriminant</h3>
-      If $\mathbf{w}$ projects $\mathbf{x}$ into 1-D, why not explicitly seek clustering in that space?
+      
+      The advantage of using kernel methods is that it is super flexible. However, it can also be very slow on large datasets (which happens at prediction time) and it can be difficult to interpret.
       <br><br>
-      We define emperical means and variances
-      $$\mathbf{m}_1 = \frac{1}{N_1}\sum_{y_n \in C_1}\mathbf{x}_n,
-      ~~~ \mathbf{S}_1 = \frac{1}{N_1}\sum_{y_n \in C_1}(\mathbf{x}_n - \mathbf{m}_1)(\mathbf{x}_n - \mathbf{m}_1)^T \\
-      \mathbf{m}_2 = \frac{1}{N_2}\sum_{y_n \in C_2}\mathbf{x}_n,
-      ~~~ \mathbf{S}_2 = \frac{1}{N_2}\sum_{y_n \in C_2}(\mathbf{x}_n - \mathbf{m}_2)(\mathbf{x}_n - \mathbf{m}_2)^T
-      $$
-
-      After taking $\mathbf{w}^\mathbf{x}$, we have the means and variances of a <strong>scalar</strong> $z$
-      $$m_1^\prime = \mathbf{w}^T\mathbf{m}_1, ~~~ v_1 = \mathbf{w}^T\mathbf{S}_1\mathbf{w} \\
-      m_2^\prime = \mathbf{w}^T\mathbf{m}_2, ~~~ v_2 = \mathbf{w}^T\mathbf{S}_2\mathbf{w}
-      $$
-
-      We then define an objective
-      $$\begin{align*}
-      \mathcal{L} &= -\frac{(m_1^\prime - m_2^\prime)^2}{v_1 + v_2} \\
-      &= -\frac{\mathbf{w}^T(\mathbf{m}_1 - \mathbf{m}_2)(\mathbf{m}_1-\mathbf{m}_2)^T\mathbf{w}}
-      {\mathbf{w}^T(\mathbf{S}_1 + \mathbf{S}_2)\mathbf{w}}
-      \end{align*}
-      $$
-      Intuitively, we want the means to be far from each other and the variances to be small.
+      
+      <h2 id="3">Linear Classification</h2>
+      What about parametric regression? We can fit a linear regression model and use the line as a decision boundary, but this would be bad because the decision boundary will be thrown off by outliers.
       <br><br>
-      Let $\mathbf{S}_B = (\mathbf{m}_1 - \mathbf{m}_2)(\mathbf{m}_1-\mathbf{m}_2)^T$ and
-      $\mathbf{S}_W = \mathbf{S}_1 + \mathbf{S}_2$
+      
+      Assuming we are in a binary classification setting and are using the representation $\mathcal Y = \{-1, +1\}$, we can use the model $\hat y = \operatorname{sign}(f(x, w))$ where, today, our model class is linear: $$\hat y = \operatorname{sign}(w^\top x).$$
       <br><br>
-      We the gradient of $\mathcal{L}(\mathbf{w})$ with respect to $\mathbf{w}$ and setting it to $0$, we have
-      $$
-      \nabla\mathcal{L}(\mathbf{w}) = \frac{(2\mathbf{S}_B\mathbf{w})(\mathbf{w}^T\mathbf{S}_w\mathbf{w})
-      - (2\mathbf{S}_w\mathbf{w})(\mathbf{w}^T\mathbf{S}_B\mathbf{w})}{(\mathbf{w}^T\mathbf{S}_w\mathbf{w})^2}
-      $$
-      Setting it to $0$,
+      
+      If $x \in \mathbb R^2$, then the equation for the decision boundary is $$0 = w_0 + x_1 w_2 + x_2 w_2.$$
+      <br><br>
 
-      $$
-      \begin{align*}
-      \nabla\mathcal{L}(\mathbf{w}) &= 0 \\
-      \mathbf{S}_B\mathbf{w}(\mathbf{w}^T\mathbf{S}_w\mathbf{w}) &= \mathbf{S}_w\mathbf{w}(\mathbf{w}^T\mathbf{S}_B\mathbf{w})
-      \end{align*}
-      $$
-      $(\mathbf{w}^T\mathbf{S}_w\mathbf{w})$ and $(\mathbf{w}^T\mathbf{S}_B\mathbf{w})$ are scale factors and don't change direction.
-      $\mathbf{S}_B\mathbf{w}$ is proportional to $(\mathbf{m}_1 - \mathbf{m}_2)$.
-      <br>
-      <br>
-      Therefore,
-      $$\mathbf{w} \propto \mathbf{S}_w^{-1}(\mathbf{m}_1 - \mathbf{m}_2)$$
-      We start with the difference of means ($\mathbf{m}_1 - \mathbf{m}_2$) and rotate based on variance ($\mathbf{S}_w^{-1}$). -->
+      <h3>0/1 Loss</h3>
+      Now we have our model, we need to decide on a loss function. Here we run into a little bit of trouble, because one very natural loss function would be 0/1 loss: simply count the number of times we are wrong: $$\ell_{0/1}(z) = \begin{cases}1 & \text{if } z > 0 \\ 0 & \text{otherwise} \end{cases}.$$
+      <br><br>
 
-    <h2 id="recap4_4">Metrics</h2>
+      This gives us an objective function $$\mathcal L_{\mathcal D}(w) = \sum_{\mathcal D} \ell_{0/1}(-y_n(w^\top x_n)).$$
+      <br><br>
+      
+      Here, $\ell_{0/1}$ gives us the loss for a single instance and $\mathcal L_{\mathcal D}$ gives us the total loss over the training dataset $\mathcal D$.
+      <br><br>
+      
+      The issue with this loss is that this doesn't consider uncertainty / distane from the boundary. This might be bad becuase you are penalizing the classifier for being wrong on a very ambiguous example the same amount as being wrong on a super obvious example. The classifier will be confused; it doesn't know which direction to move in order to improve.
+      <br><br>
+      
+      Mathematically, the derivative is always 0: it does not tell us which direction we can move in to lessen the loss. 
+      <br><br>
+      
+      <h3>Hinge Loss</h3>
+      Let's choose a loss that discerns between slightly and very wrong classificaitons: $$\ell_{\text{hinge}}(z) = \begin{cases}z & \text{if } z > 0 \\ 0 & \text{otherwise} \end{cases}.$$
+      <br><br>
+
+      This gives us an objective function $$\mathcal L_{\mathcal D}(w) = \sum_{\mathcal D} \ell_{\text{hinge}}(-y_n(w^\top x_n)).$$
+      <br><br>
+
+      If the signs do not match ($\operatorname{sign}(y_n) \neq \operatorname{sign}(w^\top x_n)$), then the classifier has put $x_n$ on the wrong side and is penalized by how far off $x_n$ was from the boundary. Remember that if $w^\top x_n = 0$, we are on the decision boundary, so $|w^\top x_n| = y_n w^\top x_n$ is a measure of distance in a sense. You can imagine this loss as being the sum of all incorrectly classified examples.
+      <br><br>
+
+      We can also take the derivative of the hinge loss!
+      <br><br>
+
+      $$\nabla_w\, \mathcal L_{\mathcal D}(w) = \nabla_w \left(-\sum_{\text{bad $y$s}} y_n w^\top x_n \right) = -\sum_{\text{bad $y$s}} y_n x_n.$$
+      <br><br>
+
+      Remember we can optimize $w$ by gradient descent:
+      $$w^{(t+1)} \leftarrow w^{(t)} - \eta \nabla_w\, \mathcal L(w^{(t)}).$$
+      <br><br>
+
+      However, this can be hard to do if our dataset is massive. Instead, we can use stochastic gradient descent (SGD). The idea is for each step where we compute the gradient, only compute the gradeint for a random smaller subset of our data.
+      <br><br>
+
+      $$w^{(t+1)} \leftarrow w^{(t)} - \eta \nabla_w\, \mathcal L_{\mathcal D^{(t)}}(w^{(t)})$$
+      where $\mathcal D^{(t)} \subset \mathcal D$ and $|\mathcal D^{(t)}| = M$.
+      <br><br>
+
+      We have to take more (noisy) steps in this case because our gradient is smaller, but because we calculate that gradient over less data this process is overall more efficient.
+      <br><br>
+      
+      Suppose we choose SGD where $M = 1$ and use the update rule that if $\hat y_n$ is incorrect, then update $$w^{(t+1)} \leftarrow w^{(t)} - y_m x_m $$
+      <br><br>
+
+      This happens to be the 1958 Perceptron Algorithm, and it converges to a perfect solution (with respect to the hinge loss) if the data is perfectly seperable. At the time, people found this by just searching for update procedures and only now can we understand this as a form of gradient descent.
+
+
+      <h2 id="4">Metrics</h2>
       There are four error metrics
       <table class="note-table">
         <tr><th>Metric</th><th>y</th><th>y-hat</th></tr>
