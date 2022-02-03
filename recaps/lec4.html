@@ -50,7 +50,7 @@ weight: 0
       $$\mathcal Y = \{C_1, \ldots, C_k\}$$
       as a general form. If there are only two classes, then you may see either
       $$\mathcal Y = \{-1, +1\} \quad \text{or} \quad \mathcal Y = \{0, 1\}.$$
-      An example $x_n$ is "positive" if it belongs in the positive class if $y_n = -1$ or "negative" if $y_n = +1$. In many settings, we use "one-hot encoding" which maps each class label $C_k$ to a vector $y \in \mathbb R^K$ of 0 everywhere except a 1 in the $k$-th element:
+      An example $x_n$ is "positive" if it belongs in the positive class $y_n = +1$ or "negative" if $y_n = -1$. In many settings, we use "one-hot encoding" which maps each class label $C_k$ to a vector $y \in \mathbb R^K$ of 0 everywhere except a 1 in the $k$-th element:
       $$\mathcal Y = \left\{ \begin{bmatrix}1\\0\\\vdots\\0\end{bmatrix},\, \begin{bmatrix}0\\1\\\vdots\\0\end{bmatrix},\, \ldots,\, \begin{bmatrix}0\\0\\\vdots\\1\end{bmatrix} \right\}$$
       <br><br>
       
@@ -87,7 +87,7 @@ weight: 0
       Here, $\ell_{0/1}$ gives us the loss for a single instance and $\mathcal L_{\mathcal D}$ gives us the total loss over the training dataset $\mathcal D$.
       <br><br>
       
-      The issue with this loss is that this doesn't consider uncertainty / distane from the boundary. This might be bad becuase you are penalizing the classifier for being wrong on a very ambiguous example the same amount as being wrong on a super obvious example. The classifier will be confused; it doesn't know which direction to move in order to improve.
+      The issue with this loss is that this doesn't consider uncertainty / distance from the boundary. This might be bad becuase you are penalizing the classifier for being wrong on a very ambiguous example the same amount as being wrong on a super obvious example. The classifier will be confused; it doesn't know which direction to move in order to improve.
       <br><br>
       
       Mathematically, the derivative is always 0: it does not tell us which direction we can move in to lessen the loss. 
@@ -100,7 +100,7 @@ weight: 0
       This gives us an objective function $$\mathcal L_{\mathcal D}(w) = \sum_{\mathcal D} \ell_{\text{hinge}}(-y_n(w^\top x_n)).$$
       <br><br>
 
-      If the signs do not match ($\operatorname{sign}(y_n) \neq \operatorname{sign}(w^\top x_n)$), then the classifier has put $x_n$ on the wrong side and is penalized by how far off $x_n$ was from the boundary. Remember that if $w^\top x_n = 0$, we are on the decision boundary, so $|w^\top x_n| = y_n w^\top x_n$ is a measure of distance in a sense. You can imagine this loss as being the sum of all incorrectly classified examples.
+      If the signs do not match ($\operatorname{sign}(y_n) \neq \operatorname{sign}(w^\top x_n)$), then the classifier has put $x_n$ on the wrong side and is penalized by how far off $x_n$ was from the boundary. Remember that if $w^\top x_n = 0$, we are on the decision boundary, so $|w^\top x_n| = -y_n w^\top x_n$ is a measure of distance for incorrectly classified points. You can imagine this loss as being the sum of all incorrectly classified examples.
       <br><br>
 
       We can also take the derivative of the hinge loss!
@@ -123,7 +123,7 @@ weight: 0
       We have to take more (noisy) steps in this case because our gradient is smaller, but because we calculate that gradient over less data this process is overall more efficient.
       <br><br>
       
-      Suppose we choose SGD where $M = 1$ and use the update rule that if $\hat y_n$ is incorrect, then update $$w^{(t+1)} \leftarrow w^{(t)} - y_m x_m $$
+      Suppose we choose SGD where $M = 1$ and use the update rule that if $\hat y_n$ is incorrect, then $$w^{(t+1)} \leftarrow w^{(t)} - y_m x_m $$
       <br><br>
 
       This happens to be the 1958 Perceptron Algorithm, and it converges to a perfect solution (with respect to the hinge loss) if the data is perfectly seperable. At the time, people found this by just searching for update procedures and only now can we understand this as a form of gradient descent.
