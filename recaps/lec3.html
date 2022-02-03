@@ -84,7 +84,7 @@ weight: 0
         &= \sum_{n=1}^N \log \mathcal N (y_n; w^\top x_n, \sigma^2) \\
         &= \sum_{n=1}^N \log \left( \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left\{ -\frac{y_n - w^\top x}{2\sigma^2} \right\} \right) \\
         &= \sum_{n=1}^N \log \left( \frac{1}{\sqrt{2\pi \sigma^2}} \right) + \sum_{n=1}^N \log \left( \exp\left\{ -\frac{(y_n - w^\top x)^2}{2\sigma^2} \right\} \right) \\
-        &= -N \log \left(\sqrt{2\pi \sigma^2} \right) - \frac{1}{2\sigma^2}\sum_{n=1}^N \log \left( -(y_n - w^\top x)^2 \right).
+        &= -N \log \left(\sqrt{2\pi \sigma^2} \right) + \frac{1}{2\sigma^2}\sum_{n=1}^N \left( (y_n - w^\top x)^2 \right).
       \end{aligned}
       $$
 
