@@ -1,0 +1,20 @@
+---
+layout: page
+title: Course Staff
+mathjax: true
+weight: 0
+---
+
+<section class="main-container text">
+    <div class="main">
+        <h2 class="title">Beyond CS 181</h2>
+        <h3>Schedule and Topics</h3>
+        <ul class="lists">
+            {% for session in site.data.all.beyondcs181 %}
+            <li>
+                {{session.name}}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

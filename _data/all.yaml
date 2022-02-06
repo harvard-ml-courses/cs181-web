@@ -81,7 +81,7 @@ dates: [
 
 lectures:
   # Week 0
-  - topic: 
+  - topic:
     subtopic:
     section: <a href="/cs181-web/sections#sec0">0. Math and Code Review</a>
     readings:
@@ -228,15 +228,15 @@ lectures:
   - topic:
     subtopic: Midterm 1
     section:
-    readings: 
+    readings:
     type: 'exam'
     hw:
   # Th
-  - topic: 
+  - topic:
     subtopic: <a href="/cs181-web/recaps/lec14">Ethics</a>
     section:
-    readings: 
-    type: 
+    readings:
+    type:
     hw:
   # Fr
   - topic:
@@ -360,7 +360,7 @@ lectures:
     readings:
     release: Practical released
     type: 'hw'
-  
+
   # Week 10
   - topic:
     subtopic:
@@ -379,7 +379,7 @@ lectures:
   - topic:
     subtopic: <a href="/cs181-web/recaps/lec20">Hidden Markov Models</a>
     section:
-    readings: 
+    readings:
     demos:
     hw:
   # Fr
@@ -403,7 +403,7 @@ lectures:
     subtopic: <a href="/cs181-web/recaps/lec21">Markov Decision Processes</a>
     section:
     readings: SB 3.1-3.6, SB 4.1-4.4 *
-    hw: 
+    hw:
   # Th
   - topic:
     subtopic:
@@ -463,7 +463,7 @@ lectures:
     hw:
     type: 'exam'  # Tu
   - topic:
-    subtopic: 
+    subtopic:
     section:
     readings:
     hw:
@@ -474,3 +474,17 @@ lectures:
     readings:
     dl: HW 6 due
     type: 'hw'
+
+beyondcs181:
+  - name: (02/11/2022) Kernel Regression and Gaussian Processes
+  - name: (02/18/2022) Decision Trees and Ensemble Models
+  - name: (02/25/2022) SKIP due to Midterm
+  - name: (03/04/2022) Neural Network Architectures Pt. 1
+  - name: (03/11/2022) Neural Network Architectures Pt. 2
+  - name: (03/18/2022) SKIP due to Spring Recess
+  - name: (03/25/2022) Training Neural Networks
+  - name: (04/01/2022) How To Read ML Research Papers
+  - name: (04/08/2022) How To Run ML Experiments
+  - name: (04/15/2022) Deep Generative Models (GANs)
+  - name: (04/22/2022) Interpretability and Explainability in ML
+  - name: (04/29/2022) Reinforcement Learning for Real Life (RL4RL)
