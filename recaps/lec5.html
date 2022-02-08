@@ -7,17 +7,15 @@ weight: 0
 
 <section class="main-container text">
     <div class="main">
-      <h4>Date: February 9, 2021 (<a href="https://forms.gle/sUtMqHxjfN4r718A8" target="_blank">Concept Check</a>, <a href="https://docs.google.com/forms/d/e/1FAIpQLSd5v302N_cg8cp60oX2PvX3yvV3CjpLiQ1G-NGNkusoJDSRag/viewanalytics" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
+      <h4>Date: February 8, 2022</h4>
       <h4>Relevant Textbook Sections: 3.6</h4>
       <h4>Cube: Supervised, Discrete/Continuous, Probabilistic</h4>
 
       <br>
 
-      <h4><a href="https://harvard.zoom.us/rec/play/Q88I40zXjvku3_HdYVvF3WqrqzT40SCAy2tbOB8Z705ZDT5LqNpPu_EUXp_NmglGNfP29B9asrjNI7YE.B3vPn9CY2QKc6Oq3">Lecture Video</a></h4>
-      <h4><a href="files/lecture5_slides.pdf" target="_blank">Slides</a></h4>
-      <h4><a href="files/lecture5_ipad.pdf" target="_blank">iPad Notes</a></h4>
+      <h4><a href="https://canvas.harvard.edu/courses/100256/external_tools/38806">Lecture Video</a></h4>
 
-      <h3>Lecture 5 Summary</h3>
+      <h2>Lecture 5 Summary</h2>
 
       <ul>
         <li><a href="#recap5_1">Motivation</a></li>
@@ -43,7 +41,7 @@ weight: 0
 
       As illustrated in several of these examples, we often are not only interested in predicting class labels, but are also interested in approximating the <i>probability</i> that an example belongs to a particular class.<br><br>
 
-      Recall that in <a href="{{ site.baseurl }}/recap4">last week's lecture</a>, we used the below parametric classification model to predict label $\hat{y}_n$ as <br>
+      Recall that in <a href="{{ site.baseurl }}/recaps/lec4">last week's lecture</a>, we used the below parametric classification model to predict label $\hat{y}_n$ as <br>
 
       \begin{equation}
         \hat{y}_n=\left\{
@@ -156,10 +154,6 @@ weight: 0
       </div>
 
       When we use Hinge loss, only incorrectly classified data points contribute to the loss.  But for logistic regression, even if $\hat{y}_n = y_n$, we still update parameters $\mathbf{w}_{t + 1}$.<br><br>
-
-      <b>Student question:</b>  Why use gradient descent?  If our loss function is differentiable and convex, can't we find an analytical solution?<br><br>
-
-      <b>Answer:</b>  In the case of logistic regression, it is hard to find an analytical solution.  Therefore in this course, we will use gradient descent to learn our logistic regression models.<br><br>
 
       <h2 id="recap5_4">Generative Approach</h2>
 
