@@ -7,16 +7,14 @@ weight: 0
 
 <section class="main-container text">
     <div class="main">
-      <h4>Date: February 11, 2021 (<a href="https://docs.google.com/forms/d/e/1FAIpQLSfn1qVvwPJqHjWNriPrVnlRgWl49PRQT_ucWNXE-9DOIq3TLQ/viewform" target="_blank">Concept Check</a>, <a href="https://docs.google.com/forms/d/e/1FAIpQLSfn1qVvwPJqHjWNriPrVnlRgWl49PRQT_ucWNXE-9DOIq3TLQ/viewanalytics" target="_blank">Class Responses</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
+      <h4>Date: February 10, 2022</h4>
       <h4>Relevant Textbook Sections: 2.7, 2.8</h4>
 
       <br>
 
-      <h4><a href="https://harvard.zoom.us/rec/play/EvIaD2vZGmMt4lBi7baWqG5sWu0Vqln80gYa_ShMTC_ngm7qGEGkWW77FwnNPZ0EKGPWlrWj2kcP_8iM.wcNzC6U1X5vz_7fe">Lecture Video</a></h4>
-      <h4><a href="files/biasvariance.pdf" target="_blank">More Notes on Bias-Variance Tradeoff</a></h4>
-      <h4><a href="files/lecture6_ipad.pdf" target="_blank">iPad Notes</a></h4>
+      <h4><a href="https://canvas.harvard.edu/courses/100256/external_tools/38806">Lecture Video</a></h4>
 
-      <h3>Lecture 6 Summary</h3>
+      <h2>Lecture 6 Summary</h2>
 
       <ul>
         <li><a href="#recap6_1">Introduction into Model Selection</a></li>
@@ -79,17 +77,13 @@ weight: 0
 
       Finally, you have a test or evaluation set, where you get the final measure of the quality of the best model you just selected. The reason why we need a test set again is beacuse in the validation set, our selected model could've just happened to get really lucky and do really well specifically on the random validation set that we selected. Remember that at the end of the day, it is a finite set of data, so it is definiltey possibly that some models happen to work better with this specific data. Because of this, we can't simply trust the accuracy score after the validation, we need to do one more final test using completley unseen data (to avoid double dipping). This is always the safest way, to have a completely untouched test set at the end to evaluate the true accuracy of your final selected model.<br><br>
 
-      <u>Student Question: What do you do when the model doesn't do well on the test?</u> That's the hard part, yes, because eventually you run out of data. Perhaps, you can keep a couple of extra tests sets, if you have enough data to do so. If not though, you may be in a situation where you have to do cross validation, which brings us into our next topic.
+      What do you do when the model doesn't do well on the test? That's the hard part, yes, because eventually you run out of data. Perhaps, you can keep a couple of extra tests sets, if you have enough data to do so. If not though, you may be in a situation where you have to do cross validation, which brings us into our next topic.
 
       <h4>Not Enough Data: Cross Validation</h4>
 
       It turns out that in real life, you may often find yourself in scenarios where you might not have the luxury to split the data into three parts. In that case, you might find yourself hardly able to pull out a test set, let alone a validation set.<br><br>
 
       What we can do is cross validation. What this means is we will split the data (randomly) into parts, let's say 5 for example (although there is various theory on how many parts we should split this into). Now, what we will do is train our model on all but one of the parts. For example, first we train the data on parts 2-5, then validate on part 1. Next, we train the data on parts 1, 3-5, and validate on part 2, and we continue this pattern for each of the five parts. There is definitely double dipping here, but this is a scenario we use when we don't have the luxury of massive amounts of data (which really only big companies like Google, Facebook, etc have), and this tends to work well in practice.<br><br>
-
-      <u>Student Question: if you train on each part, how do you select the parameters?</u> You find the model that does the best on all the parts of the cross validation, then train the data one more time with all of the data, then you have your final model.<br><br>
-
-      <u>Student Question: how would we compare a class of models against a class of models? For example, how do we see whether a linear model is better vs a quadratic model for a set of data?</u> This happens implicitly beucause our cross validation process will pick the best model, so you can input many linear models and quadratic models and the class of the resulting model is the better model class.<br><br>
 
       <h2 id="recap6_4">Bias Variance Tradeoff</h2>
 
@@ -99,11 +93,11 @@ weight: 0
 
       This results in a situation where bias goes down while model size increases, but variance goes up while model size increases, leading to a sweet spot where we will minimize the overall test error (which is made up of bias and variance). We will want a model that is there, with a minimal test error, and we'll discuss the theory a bit on why we can break the error down into bias and variance.<br><br>
 
-      <u>Student Question: Is model size the same as number of parameters?</u> Roughly speaking yes, but parameters might not be independent of each other, so it might not necessarily be the case. But this is a reasonable proxy to consider.<br><br>
+      Is model size the same as number of parameters? Roughly speaking yes, but parameters might not be independent of each other, so it might not necessarily be the case. But this is a reasonable proxy to consider.<br><br>
 
       Note: a big asusmption we are making here is that optimiziation is not an issue (as in we're assuming we're doing the gradient descent well, or we have an analytic solution, etc. This doesn't mean we're assuming we have the best test accuracy, but we are indeed assming that we are optimizing models correctly).
 
-      <u>Student Question: Does the bias variance tradeoff always hold? Do we always want some balance of bias and variance?</u> There is one "exception" to this idea. Specifically, some argue that neural networks beat this idea, and that even though the model size is insanely high, we still do well and our model is generalizable. However, tunrs out there's a specific proecdure we take in setting up neural nets that does actually keep the model size low, stay tuned to learn more in future lectures where we cover neural networks.<br><br>
+      Does the bias variance tradeoff always hold? Do we always want some balance of bias and variance? There is one "exception" to this idea. Specifically, some argue that neural networks beat this idea, and that even though the model size is insanely high, we still do well and our model is generalizable. However, tunrs out there's a specific proecdure we take in setting up neural nets that does actually keep the model size low, stay tuned to learn more in future lectures where we cover neural networks.<br><br>
 
       Now, let us take a look at the math:<br><br>
 
@@ -131,7 +125,7 @@ weight: 0
 
       We've introduced a new variable $\bar{f}(x) = E_D[f_D(x)]$. To describe this, imagine if you took a bunch of datasets, and did this whole experiment a million times. Concretely, imagine you took 100 data points, fit it, took 100 more data points, fit it again, and then averaged all the models. That's what $\bar{f}$ represents.<br><br>
 
-      <u>Student Question: Is $\bar{f}$ the same as $\bar{y}$?</u> No, as a quick example, if you had a linear model, and you fit it many times, the average model would still be a line, but if we had our true y as a parabola, then it would still be a parabola and $\bar{f}$ would be different from $\bar{y}$.<br><br>
+      Is $\bar{f}$ the same as $\bar{y}$? No, as a quick example, if you had a linear model, and you fit it many times, the average model would still be a line, but if we had our true y as a parabola, then it would still be a parabola and $\bar{f}$ would be different from $\bar{y}$.<br><br>
 
       Now, we can break down the above expression.<br><br>
 
