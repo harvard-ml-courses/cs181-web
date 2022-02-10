@@ -100,9 +100,9 @@ weight: 0
       \begin{aligned}
         \log \ell(w) &= \log  p(\mathbf y | \mathbf X, \mathbf w) \\
         &= \log \mathcal N (\mathbf y; \mathbf X \mathbf w, \sigma^2 \mathbf I_D) \\
-        &= \log \left( \frac{1}{\sqrt{2\pi |\sigma^2 \mathbf I_D|}} \exp\left\{ -\frac{1}{2} (\mathbf y - \mathbf X \mathbf w)^\top(\sigma^2 \mathbf I_D)^{-1}(\mathbf y - \mathbf X \mathbf w) \right\} \right) \\
-        &= \log \left( \frac{1}{\sqrt{2\pi |\sigma^2 \mathbf I_D|}} \right ) + \log \left( \exp\left\{ -\frac{1}{2} (\mathbf y - \mathbf X \mathbf w)^\top(\sigma^2 \mathbf I_D)^{-1}(\mathbf y - \mathbf X \mathbf w) \right\} \right) \\
-        &= -N \log \sqrt{2 \pi \sigma^{2}} - \frac{1}{2 \sigma^{2}}(\mathbf{y}-\mathbf{X w})^\top(\mathbf{y}-\mathbf{X w}).
+        &= \log \left( \frac{1}{\sqrt{(2\pi)^D |\sigma^2 \mathbf I_D|}} \exp\left\{ -\frac{1}{2} (\mathbf y - \mathbf X \mathbf w)^\top(\sigma^2 \mathbf I_D)^{-1}(\mathbf y - \mathbf X \mathbf w) \right\} \right) \\
+        &= \log \left( \frac{1}{\sqrt{(2\pi)^D |\sigma^2 \mathbf I_D|}} \right ) + \log \left( \exp\left\{ -\frac{1}{2} (\mathbf y - \mathbf X \mathbf w)^\top(\sigma^2 \mathbf I_D)^{-1}(\mathbf y - \mathbf X \mathbf w) \right\} \right) \\
+        &= -D \log \sqrt{2 \pi \sigma^{2}} - \frac{1}{2 \sigma^{2}}(\mathbf{y}-\mathbf{X w})^\top(\mathbf{y}-\mathbf{X w}).
       \end{aligned}
       $$
 
