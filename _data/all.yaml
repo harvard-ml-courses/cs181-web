@@ -476,7 +476,7 @@ lectures:
     type: 'hw'
 
 beyondcs181:
-  - name: (02/11/2022) Kernel Regression and Gaussian Processes: <a href="/cs181-web/files/beyond_cs_181_L1.pdf">Slides</a>
+  - name: (02/11/2022) Kernel Regression and Gaussian Processes TEST: <a href="/cs181-web/files/beyond_cs_181_L1.pdf">Slides</a> TEST2
   - name: (02/18/2022) Decision Trees and Ensemble Models
   - name: (02/25/2022) SKIP due to Midterm
   - name: (03/04/2022) Neural Network Architectures Pt. 1
