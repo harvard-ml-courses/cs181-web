@@ -23,11 +23,10 @@ weight: 0
       <h2>Lecture 7 Summary</h2>
 
       <ul>
-        <li><a href="#1">Diversion: More Real World Context on Model Selection</a></li>
-        <li><a href="#2">Intro to Bayesian Model Selection</a></li>
-        <li><a href="#3">Setting Up a Beta-Bernoulli Model Example</a></li>
-        <li><a href="#4">Different Choices for Predictors</a></li>
-        <li><a href="#5">Model Selection With the Marginal Likelihood</a></li>
+        <li><a href="#1">Bayesian Models</a></li>
+        <li><a href="#2">Posterior over Parameters</a></li>
+        <li><a href="#3">Posterior Predictive</a></li>
+        <li><a href="#4">Prior Selection</a></li>
       </ul>
 
       <h2 id="1">Bayesian Models</h2>
@@ -41,7 +40,7 @@ weight: 0
 
       Because our global parameters are random variables, we will always be marginalizing them out. This correpsonds to just taking an average over the values they might be.
 
-      <h2>Posterior over Parameters</h2>
+      <h2 id="2">Posterior over Parameters</h2>
 
       This is relatively simple: we just apply Bayes' rule:
       $$
@@ -68,7 +67,7 @@ weight: 0
       $$
       Hence, the posterior distribution is another Beta distribution $\operatorname{Beta}(\alpha', \beta')$ where $\alpha'=\alpha + N_H$ and $\beta'=\beta + N_T$.
 
-      <h2 id="2">Predictive Posterior</h2>
+      <h2 id="3">Predictive Posterior</h2>
 
       How do we use the posterior distribution over weights to make predictions? We saw how we can choose the parameters which maximize our data likelihood $p(\mathcal D | \theta)$: $$\theta_\text{MLE} \in \operatorname*{argmax}_\theta p(\mathcal D | \theta) = \frac{N_H}{N_H + N_T}.$$
       <br>
@@ -91,7 +90,7 @@ weight: 0
 
       Also note that was $|\mathcal D|$ grows, these prediction techniques approach the same predictions.
 
-      <h2 id="3">Prior Selection</h2>
+      <h2 id="4">Prior Selection</h2>
       In a Bayesian setting, model selection corresponds to model class selection and prior selection. For example, when fitting data we can select what type of curve to fit (line, parabola) and also what prior to put on the parameters of the curve. There is no point in searching for one single correct line or parabola since we will average over all possible ones equally.
       <br>
 
