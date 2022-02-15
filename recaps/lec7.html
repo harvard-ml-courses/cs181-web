@@ -96,6 +96,9 @@ weight: 0
       <br>
 
       How do we select between two models then? What we can do is calculate the likelihood of the data $p(\mathcal D)$ for different model classes: $$p(\mathcal D) = \int_w p(\mathcal D | w) p(w) \, d\,w.$$
+      <br>
+
+      If we are considering too many possible models $w$, then $p(w)$ is spread out and the integral in $p(\mathcal D)$ will turn out to be very low. This is how the Bayesian approach penalizes overly complicated models. However, if $p(w)$ doesn't contain very good models, then the $p(\mathcal D | w)$ factor will be low and the integral will still turn out to be very low! Hence, the ideal prior is a Goldilocks problem.   
 
     </div> 
 </section>
