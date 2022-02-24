@@ -214,7 +214,7 @@ lectures:
     section:
     readings:
     dl: HW 2 due
-    release: <a href="/cs181-web/homework#hw3">HW 3 released (Neural networks, model selection)</a>
+    release: <a href="/cs181-web/homework#hw3">HW 3 released (neural networks, model selection)</a>
     type: 'hw'
 
   # Week 5
