@@ -479,12 +479,12 @@ beyondcs181:
   - name: "(02/11/2022) Kernel Regression and Gaussian Processes (<a href='/cs181-web/files/beyond_cs_181_L1.pdf'>Slides</a>)"
   - name: "(02/18/2022) Decision Trees and Ensemble Models (<a href='/cs181-web/files/beyond_cs_181_L2.pdf'>Slides</a>)"
   - name: (02/25/2022) SKIP due to Midterm
-  - name: (03/04/2022) Neural Network Architectures Pt. 1
-  - name: (03/11/2022) Neural Network Architectures Pt. 2
-  - name: (03/18/2022) SKIP due to Spring Recess
-  - name: (03/25/2022) Training Neural Networks
-  - name: (04/01/2022) How To Read ML Research Papers
-  - name: (04/08/2022) How To Run ML Experiments
-  - name: (04/15/2022) Deep Generative Models (GANs)
-  - name: (04/22/2022) Interpretability and Explainability in ML
-  - name: (04/29/2022) Reinforcement Learning for Real Life (RL4RL)
+  - name: "(03/04/2022) Neural Network Architectures I (<a href='/cs181-web/files/beyond_cs_181_L3.pdf'>Slides</a>)"
+  - name: "(03/11/2022) Neural Network Architectures II"
+  - name: "(03/18/2022) SKIP due to Spring Recess"
+  - name: "(03/25/2022) Training Neural Networks"
+  - name: "(04/01/2022) How To Read ML Research Papers"
+  - name: "(04/08/2022) How To Run ML Experiments"
+  - name: "(04/15/2022) Deep Generative Models (GANs)"
+  - name: "(04/22/2022) Interpretability and Explainability in ML"
+  - name: "(04/29/2022) Reinforcement Learning for Real Life (RL4RL)"
