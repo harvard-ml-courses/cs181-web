@@ -9,26 +9,24 @@ weight: 0
     <div class="main">
 
 
-      <h4>Date: March 18, 2021 (<a href="https://docs.google.com/forms/d/17L0C-3IUbxRM6hok8bPgyt5QBTVs7QYAkInD6F7Xivg/edit" target="_blank">Concept Check</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
+      <h4>Date: March 22, 2022</h4>
       <h4>Relevant Textbook Sections: 9.1-9.5</h4>
       <h4>Cube: Unsupervised, Discrete, Probabilistic</h4>
 
       <br>
         
-      <h4><a href="https://harvard.zoom.us/rec/play/JPW2qkQWHyOJ3XO34a1DzGKT8PchvRaY-Ean2KRqw8Pyz6GCLFwz_ZPOjb3-EeMIult4DzQ_zQHAqKn5.AdIVBd2873sf5yIN">Lecture Video</a></h4>
-      <h4><a href="files/lecture14_ipad.pdf" target="_blank">iPad Notes</a></h4>
-      <h4><a href="files/lecture14_slides.pdf" target="_blank">Slides</a></h4>
+      <h4><a href="https://canvas.harvard.edu/courses/100256/external_tools/38806">Lecture Video</a></h4>
 
-      <h3>Lecture 14 Summary</h3>
+      <h2>Summary</h2>
 
       <ul>
-        <li><a href="#recap14_1">Intro: Mixture Models</a></li>
+        <li><a href="#recap14_1">Mixture Models</a></li>
         <li><a href="#recap14_2">The Set Up and the Connection to Generative Classification</a></li>
         <li><a href="#recap14_3">Specific Example: Gaussian Mixture Model</a></li>
         <li><a href="#recap14_4">General Properties of Expectation Maximization</a></li>
       </ul>
 
-      <h2 id="recap14_1">Intro: Mixture Models</h2>
+      <h2 id="recap14_1">Mixture Models</h2>
 
       A mixture model is unsupervised, discrete, and probabilistic model. It is in the same categories as clustering except for the fact that it is probabilistic. For the intuition on this, basically as opposed to simply clustering a given x into a final cluster z, we want to instead capture the fact that the datapoint x might have a breakdown of probabilities of which z it is part of. To take a quick example, imagine we are looking at heights in a human population. It turns out that the height of men and women are both are approximately Gaussian, with different means and variances. In an unsupervised setting, imagine getting all the combined height data but with no labels, so all we have is heights. We happen to know that truly underlying is a discrete variable, their sex, that leads to two separate Gaussians, but when you put them together it leads to a funky looking distribution. To deal with this, we can use a mixture model, which won't say outright which cluster a given height is in, but instead will give us probabilities of being in different cluster (the different sexes here).<br><br>
 
