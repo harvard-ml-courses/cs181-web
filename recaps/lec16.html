@@ -8,18 +8,17 @@ weight: 0
 <section class="main-container text">
     <div class="main">
 
-      <h4>Date: March 25, 2021 (<a href="https://docs.google.com/forms/d/13ni0-OjbUyMxjxHDYbQ-dXfanSF7IzMj6FCiPyACHvc/edit" target="_blank">Concept Check</a>, <a href="{{ site.baseurl }}/ccsolutions" target="_blank">Solutions</a>)</h4>
+      <h4>Date: March 29, 2022</h4>
       <h4>Relevant Textbook Sections: 9.6</h4>
       <h4>Cube: Unsupervised, Continuous, Probabilistic</h4>
 
       <br>
-      <h4><a href="https://harvard.zoom.us/rec/play/-5glDtnLGZaVjwxrJRxxQp9u5ADaoCio_I-VUT0vFM-lsLASZufIgyvFFZWYitOdVrFmTU1sJSOJRCmK.qbPYcileQLA3dbET" target="_blank">Lecture Video</a></h4>
-      <h4><a href="files/lecture16_ipad.pdf" target="_blank">iPad Notes</a></h4>
+      <h4><a href="https://canvas.harvard.edu/courses/100256/external_tools/38806">Lecture Video</a></h4>
         
-      <h3>Lecture 16 Summary</h3>
+      <h3>Summary</h3>
 
       <ul>
-        <li><a href="#recap16_1">Intro: Probabilistic Embeddings</a></li>
+        <li><a href="#recap16_1">Probabilistic Embeddings</a></li>
         <li><a href="#recap16_2">Variations of Probablistic Embeddings</a></li>
         <li><a href="#recap16_3">Deep Dive into Topic Models Speciifcally</a></li>
         <li><a href="#recap16_4">Quick Detour: Dirichlet Distributions</a></li>
@@ -27,7 +26,7 @@ weight: 0
         <li><a href="#recap16_6">Continuing with Topic Models: Moving to Inference</a></li>
       </ul>
 
-      <h2 id="recap16_1">Intro: Probabilistic Embeddings</h2>
+      <h2 id="recap16_1">Probabilistic Embeddings</h2>
 
       Last time, we looked at PCA as an example of nonprobabilistic embeddings. Today will look at probabilistic embeddings, where we have a probabilistic model for a continuous z that produces an x. One specific type of model within probabilistic embeddings is the topic model. A quick real world example that uses a topic model is the following: there was a study that was done in Pompei where they looked at rooms in the households, marked down the objects they found and their counts, and used a topic model to hypothesize the purpose of the room. Essentially, they'd note down items like doors, chests, cupboards, glass bottles (and their respective counts) etc, which helped indicate what the purpose of a room might be. The reason this is probabilistic is because each room could've had more than one purpose, so we want to capture the fact that a single room might have had multiple purposes, and hence we use a topic model.
 
