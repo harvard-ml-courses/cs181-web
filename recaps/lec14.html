@@ -73,7 +73,7 @@ weight: 0
 
       We notice that, if we are given $z_{nk}$, then solving for the maximum likelihood of $\pi$, $\mu$, and $\Sigma$, is actually pretty easy, which would correspond to what we did before in generative classification. But without $z_{nk}$, this is hard, and non convex. We won't be able to solve for the maximmum likelihood of $\pi$, $\mu$, and $\Sigma$.
 
-      Note also that, this equation above looks like the K-Means objective. If the $\pi_k$ were uninformative, and did not really prefer a particular cluster, then the $ z_{nk} \log(\pi_k)$ wouldn't really matter. The other term, $z_{nk} \log N(x_n; \mu_k, \Sigma_k)$, is taking the log of the Gaussian, and since the PDF of a normal is exponential, after taking the log of it we just end up with the squared term (that was inside the exponentia). This is exactly like the K-Means objective we had from before. This helps us confirm and note the similarities between clustering and mixture models.
+      Note also that, this equation above looks like the K-Means objective. If the $\pi_k$ were uninformative, and did not really prefer a particular cluster, then the $ z_{nk} \log(\pi_k)$ wouldn't really matter. The other term, $z_{nk} \log N(x_n; \mu_k, \Sigma_k)$, is taking the log of the Gaussian, and since the PDF of a normal is exponential, after taking the log of it we just end up with the squared term (that was inside the exponential). This is exactly like the K-Means objective we had from before. This helps us confirm and note the similarities between clustering and mixture models.
 
       <h4>Let's Try Log-Likelihood (doesn't work as is)</h4>
 
