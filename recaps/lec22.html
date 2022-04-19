@@ -8,14 +8,12 @@ weight: 0
 <section class="main-container text">
     <div class="main">
 
-      <h4>Date: April 20, 2021</h4>
+      <h4>Date: April 19, 2022</h4>
       <br>
 
-      <h4><a href="https://harvard.zoom.us/rec/play/JhHsjOm-YU_3KnhOd5INJnYG3UFZzu9XFMwDgEDa69NgF6Vd-vy4ia2S8Xcp85PDhrDByvQg53GO_8Gh.iHSPSrNlVx10LI6q">Lecture Video</a></h4>
-      <h4><a href="files/lecture22_ipad.pdf" target="_blank">iPad Notes</a></h4>
-      <h4><a href="files/lecture22_slides.pptx" target="_blank">Slides</a></h4>
+      <h4><a href="https://canvas.harvard.edu/courses/100256/external_tools/53531">Lecture Video (in "Cloud Recording")</a></h4>
 
-      <h3>Lecture 22 Summary</h3>
+      <h2>Summary</h2>
 
       <ul>
         <li><a href="#recap22_1">Model-Based Learning</a></li>
@@ -49,7 +47,7 @@ weight: 0
 
       In model-free RL, the cycle is different from model-based RL in that we are no longer learning a model and planning. Instead, feedback from the world is directly used to update the agent. Different Model-Free RL algorithms vary in how the agent selects its behavior (e.g. greedy or $\epsilon$-greedy) and how it learns (e.g. how it updates its Q-values).<br><br>
 
-      Recall from <a href="recap21.html" target="_blank">last lecture</a> our discussion on Q-values, SARSA, and Q-learning. We had a definition of the optimal Q-function, which could be used to find the optimal policy. (In each step, the data collected is of the form $s, a, r, s’, a’$: $s$ is the current state, $a$ is the action the agent took, $r$ is the reward received, $s’$ is the next state, and $a’$ is what the current policy recommends for the next action.)
+      Recall from last lecture our discussion on Q-values, SARSA, and Q-learning. We had a definition of the optimal Q-function, which could be used to find the optimal policy. (In each step, the data collected is of the form $s, a, r, s’, a’$: $s$ is the current state, $a$ is the action the agent took, $r$ is the reward received, $s’$ is the next state, and $a’$ is what the current policy recommends for the next action.)
 
       $$Q^*(s,a) = r(s,a) + \gamma \sum_{s’}p(s’ | s, a)\max_{a’}Q^*(s’,a’)$$
 
