@@ -33,82 +33,86 @@ ohs:
 dates: [
   "",
   "Week 0",
-  "Jan. 25 (Tu)",
-  "Jan. 27 (Th)",
-  "Jan. 28 (Fr)",
+  "Jan. 17 (Tu)",
+  "Jan. 19 (Th)",
+  "Jan. 20 (Fr)",
   "Week 1",
-  "Feb. 1 (Tu)",
-  "Feb. 3 (Th)",
-  "Feb. 4 (Fr)",
+  "Jan. 24 (Tu)",
+  "Jan. 26 (Th)",
+  "Jan. 27 (Fr)",
   "Week 2",
-  "Feb. 8 (Tu)",
-  "Feb. 10 (Th)",
-  "Feb. 11 (Fr)",
+  "Jan. 31 (Tu)",
+  "Feb. 2 (Th)",
+  "Feb. 3 (Fr)",
   "Week 3",
-  "Feb. 15 (Tu)",
-  "Feb. 17 (Th)",
-  "Feb. 18 (Fr)",
+  "Feb. 7 (Tu)",
+  "Feb. 9 (Th)",
+  "Feb. 10 (Fr)",
   "Week 3",
-  "Feb. 22 (Tu)",
-  "Feb. 24 (Th)",
-  "Feb. 25 (Fr)",
+  "Feb. 14 (Tu)",
+  "Feb. 16 (Th)",
+  "Feb. 17 (Fr)",
   "Week 4",
-  "Mar. 1 (Tu)",
-  "Mar. 3 (Th)",
-  "Mar. 4 (Fr)",
+  "Feb. 21 (Tu)",
+  "Feb. 23 (Th)",
+  "Feb. 24 (Fr)",
   "Week 5",
-  "Mar. 8 (Tu)",
-  "Mar. 10 (Th)",
-  "Mar. 11 (Fr)",
+  "Feb. 28 (Tu)",
+  "Mar. 2 (Th)",
+  "Mar. 3 (Fr)",
   "Week 6",
-  "Mar. 15 (Tu)",
-  "Mar. 17 (Th)",
-  "Mar. 18 (Fr)",
+  "Mar. 7 (Tu)",
+  "Mar. 9 (Th)",
+  "Mar. 10 (Fr)",
   "Week 7",
-  "Mar. 22 (Tu)",
-  "Mar. 24 (Th)",
-  "Mar. 25 (Fr)",
+  "Mar. 14 (Tu)",
+  "Mar. 16 (Th)",
+  "Mar. 17 (Fr)",
   "Week 8",
-  "Mar. 29 (Tu)",
-  "Mar. 31 (Th)",
-  "Apr. 1 (Fr)",
+  "Mar. 21 (Tu)",
+  "Mar. 23 (Th)",
+  "Mar. 24 (Fr)",
   "Week 9",
-  "Apr. 5 (Tu)",
-  "Apr. 7 (Th)",
-  "Apr. 8 (Fr)",
+  "Mar. 28 (Tu)",
+  "Mar. 30 (Th)",
+  "Mar. 31 (Fr)",
   "Week 10",
-  "Apr. 12 (Tu)",
-  "Apr. 14 (Th)",
-  "Apr. 15 (Fr)",
+  "Apr. 4 (Tu)",
+  "Apr. 6 (Th)",
+  "Apr. 7 (Fr)",
   "Week 11",
-  "Apr. 19 (Tu)",
-  "Apr. 21 (Th)",
-  "Apr. 22 (Fr)",
+  "Apr. 11 (Tu)",
+  "Apr. 13 (Th)",
+  "Apr. 14 (Fr)",
   "Week 12",
-  "Apr. 26 (Tu)",
-  "Apr. 28 (Th)",
-  "Apr. 29 (Fr)",
+  "Apr. 18 (Tu)",
+  "Apr. 20 (Th)",
+  "Apr. 21 (Fr)",
+  "Week 13",
+  "Apr. 25 (Tu)",
+  "Apr. 27 (Th)",
+  "Apr. 28 (Fr)",
 ]
 
 lectures:
   # Week 0
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec0">0. Math and Code Review</a>
+    section: <!--<a href="/cs181-web/sections#sec0">0. Math and Code Review</a>-->
     readings:
     hw:
     type: 'sec'
   # Tu
   - topic:
-    subtopic: <a href="/cs181-web/recaps/lec1">Welcome to CS181</a>
+    subtopic: <!-- <a href="/cs181-web/recaps/lec1">Welcome to CS181</a>-->
     section:
-    readings: Ch 1
-    release: <a href="/cs181-web/homework#hw1">HW 1 released (regression)</a>
+    readings: <!-- Ch 1 -->
+    release: HW 0 released (pre-requisites) <!--<a href="/cs181-web/homework#hw1">HW 1 released (regression)</a>-->
   # Th
-  - topic: Regression
-    subtopic: <a href="/cs181-web/recaps/lec2">Linear Regression</a>
+  - topic: <!-- Regression -->
+    subtopic: <!-- <a href="/cs181-web/recaps/lec2">Linear Regression</a> -->
     section:
-    readings: 2.3-2.5, 2.6.1, 2.7.1
+    readings: <!-- 2.3-2.5, 2.6.1, 2.7.1 -->
     hw:
   # Fr
   - topic:
@@ -121,132 +125,139 @@ lectures:
   # Week 1
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec1">1. Linear regression</a>
+    section: Math, Statistics, and Code Review <!--<a href="/cs181-web/sections#sec1">1. Linear regression</a>-->
     readings:
     hw:
     type: 'sec'
   # Tu
-  - topic: Regression
-    subtopic: <a href="/cs181-web/recaps/lec3">Probabilistic Linear Regression</a>
+  - topic:
+    subtopic: Intro to CS 181 <!--<a href="/cs181-web/recaps/lec3">Probabilistic Linear Regression</a>-->
     section:
-    readings: 2.6.2, 2.6.3
+    readings: <!--2.6.2, 2.6.3-->
     hw:
   # Th
-  - topic: Classification
-    subtopic: <a href="/cs181-web/recaps/lec4">Linear Classification</a>
+  - topic: Regression
+    subtopic: Regression <!--<a href="/cs181-web/recaps/lec4">Linear Classification</a>-->
     section:
-    readings: 3.1-3.5
+    readings: <!--3.1-3.5-->
+    hw: HW 1 released (regression)
   # Fr
   - topic:
     subtopic:
     section:
     readings:
+    beyond: AI and Broader Impact
     release:
     type: 'hw'
 
   # Week 2
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec2">2. Linear and probabilistic classification</a>
+    section: Regression <!--<a href="/cs181-web/sections#sec2">2. Linear and probabilistic classification</a>-->
     readings:
     hw:
     type: 'sec'
   # Tu
-  - topic: Classification
-    subtopic: <a href="/cs181-web/recaps/lec5">Probabilistic Linear Classification</a>
+  - topic: <!--Classification-->
+    subtopic: Probabilistic Regression <!--<a href="/cs181-web/recaps/lec5">Probabilistic Linear Classification</a>-->
     section:
-    readings: 3.6
+    readings: <!--3.6-->
     demos:
     hw:
   # Th
-  - topic: Model selection
-    subtopic: <a href="/cs181-web/recaps/lec6">Model Selection, Frequentist</a>
+  - topic: 
+    subtopic: Confidence and Uncertainty <!--<a href="/cs181-web/recaps/lec6">Model Selection, Frequentist</a>-->
     section:
-    readings: 2.7, 2.8
+    readings: <!--2.7, 2.8-->
     hw:
   # Fr
   - topic:
     subtopic:
     section:
     readings:
-    dl: HW 1 due
-    release: <a href="/cs181-web/homework#hw2">HW 2 released (classification and model selection)</a>
+    dl:
+    beyond: Kernels
+    release: <!--<a href="/cs181-web/homework#hw2">HW 2 released (classification and model selection)</a>-->
     hw:
     type: 'hw'
 
   # Week 3
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec3">3. Model selection</a>
+    section: Classification <!--<a href="/cs181-web/sections#sec3">3. Model selection</a>-->
     readings:
     hw:
     type: 'sec'
   # Tu
-  - topic: Model selection
-    subtopic: <a href="/cs181-web/recaps/lec7">Model Selection, Bayesian</a>
+  - topic: Classification
+    subtopic: Probabilistic Classification <!--<a href="/cs181-web/recaps/lec7">Model Selection, Bayesian</a>-->
     section:
-    readings: 2.8, 2.9
+    readings: <!--2.8, 2.9-->
     hw:
   # Th
-  - topic: Neural networks
-    subtopic: <a href="/cs181-web/recaps/lec8">Neural Networks 1</a>
+  - topic: <!--Neural networks-->
+    subtopic: Non-Probabilistic Classification <!--<a href="/cs181-web/recaps/lec8">Neural Networks 1</a>-->
     section:
-    readings: 4.1-4.4, 4.6
-    hw:
+    readings: <!--4.1-4.4, 4.6-->
+    release: HW 2 released (classification)
+    dl: HW 1 due
   # Fr
   - topic:
     subtopic:
     section:
     readings:
+    beyond: OOD, Uncertainty, and Interpretability
     type: 'hw'
 
   # Week 4
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec4">4. Neural networks</a>
+    section: Neural Network Architectures and Optimization <!--<a href="/cs181-web/sections#sec4">4. Neural networks</a>-->
     readings:
     hw:
     type: 'sec'
   # Tu
-  - topic: Neural networks
-    subtopic: <a href="/cs181-web/recaps/lec9">Neural Networks 2</a>
+  - topic: Neural Networks (NN)
+    subtopic: Intro to NN <!--<a href="/cs181-web/recaps/lec9">Neural Networks 2</a>-->
     section:
-    readings: 4.4
+    readings: <!--4.4-->
     hw:
   # Th
-  - topic: SVMs
-    subtopic: <a href="/cs181-web/recaps/lec10">Support Vector Machines 1</a>
+  - topic:
+    subtopic: More on NN <!--<a href="/cs181-web/recaps/lec10">Support Vector Machines 1</a>-->
     section:
-    readings: 5.1-5.3
+    readings: <!--5.1-5.3-->
     hw:
   # Fr
   - topic:
     subtopic:
     section:
     readings:
-    dl: HW 2 due
-    release: <a href="/cs181-web/homework#hw3">HW 3 released (neural networks, model selection)</a>
+    release: <!--<a href="/cs181-web/homework#hw3">HW 3 released (neural networks, model selection)</a>-->
+    beyond: NN Interpretability
     type: 'hw'
 
   # Week 5
   - topic:
     subtopic:
-    section: Midterm 1 review
+    section: Conjugate Pairs in Modeling
     readings:
     hw:
     type: 'sec'
   # Tu
-  - topic:
-    subtopic: Midterm 1
+  - topic: Bayesian Modeling
+    subtopic: Intro to Bayesian Models
     section:
     readings:
-    type: 'exam'
     hw:
   # Th
   - topic:
-    subtopic: <a href="/cs181-web/recaps/lec14">Ethics</a>
+    subtopic: More on Bayesian Models <!--<a href="/cs181-web/recaps/lec14">Ethics</a>-->
     section:
+    dl: HW 2 due
+    release: HW 3 released (neural networks and Bayes)
     readings:
+    dl: 
     type:
     hw:
   # Fr
@@ -254,6 +265,7 @@ lectures:
     subtopic:
     section:
     readings:
+    beyond: Deep Bayes
     type: 'hw'
 
   # Week 6
