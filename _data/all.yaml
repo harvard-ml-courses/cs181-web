@@ -337,13 +337,13 @@ lectures:
     type: 'sec'
   # Tu
   - topic:
-    subtopic: Spring Break! <a href="/cs181-web/recaps/lec15">Mixture Models</a>
+    subtopic: Spring Break! <!--<a href="/cs181-web/recaps/lec15">Mixture Models</a>-->
     section:
     readings:
     hw:
   # Th
   - topic:
-    subtopic: Spring Break! <a href="/cs181-web/recaps/lec16">PCA</a>
+    subtopic: Spring Break! <!--<a href="/cs181-web/recaps/lec16">PCA</a>-->
     section:
     readings:
     hw:
