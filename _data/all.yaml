@@ -140,7 +140,8 @@ lectures:
     subtopic: Regression <!--<a href="/cs181-web/recaps/lec4">Linear Classification</a>-->
     section:
     readings: <!--3.1-3.5-->
-    hw: HW 1 released (regression)
+    release: HW 1 released (regression)
+    dl: HW 0 due
   # Fr
   - topic:
     subtopic:
@@ -378,7 +379,7 @@ lectures:
     dl: HW 3 and Practical I due
     readings:
     demos:
-    hw: HW 4 released (latent variables and EM)
+    release: HW 4 released (latent variables and EM)
   # Fr
   - topic:
     subtopic:
@@ -436,7 +437,7 @@ lectures:
     subtopic: Inference of HMMs
     section:
     readings:
-    hw: HW 5 released (HMM)
+    release: HW 5 released (HMM)
     dl: HW 4 due
   # Fr
   - topic:
@@ -495,7 +496,7 @@ lectures:
     section:
     dl: HW 5 due
     readings:
-    hw: Practical II released (RL and social-technical systems)
+    release: Practical II released (RL and social-technical systems)
   # Fr
   - topic:
     subtopic:
