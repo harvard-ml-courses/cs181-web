@@ -48,47 +48,47 @@ dates: [
   "Feb. 7 (Tu)",
   "Feb. 9 (Th)",
   "Feb. 10 (Fr)",
-  "Week 3",
+  "Week 4",
   "Feb. 14 (Tu)",
   "Feb. 16 (Th)",
   "Feb. 17 (Fr)",
-  "Week 4",
+  "Week 5",
   "Feb. 21 (Tu)",
   "Feb. 23 (Th)",
   "Feb. 24 (Fr)",
-  "Week 5",
+  "Week 6",
   "Feb. 28 (Tu)",
   "Mar. 2 (Th)",
   "Mar. 3 (Fr)",
-  "Week 6",
+  "Week 7",
   "Mar. 7 (Tu)",
   "Mar. 9 (Th)",
   "Mar. 10 (Fr)",
-  "Week 7",
+  "Week 8",
   "Mar. 14 (Tu)",
   "Mar. 16 (Th)",
   "Mar. 17 (Fr)",
-  "Week 8",
+  "Week 9",
   "Mar. 21 (Tu)",
   "Mar. 23 (Th)",
   "Mar. 24 (Fr)",
-  "Week 9",
+  "Week 10",
   "Mar. 28 (Tu)",
   "Mar. 30 (Th)",
   "Mar. 31 (Fr)",
-  "Week 10",
+  "Week 11",
   "Apr. 4 (Tu)",
   "Apr. 6 (Th)",
   "Apr. 7 (Fr)",
-  "Week 11",
+  "Week 12",
   "Apr. 11 (Tu)",
   "Apr. 13 (Th)",
   "Apr. 14 (Fr)",
-  "Week 12",
+  "Week 13",
   "Apr. 18 (Tu)",
   "Apr. 20 (Th)",
   "Apr. 21 (Fr)",
-  "Week 13",
+  "Week 14",
   "Apr. 25 (Tu)",
   "Apr. 27 (Th)",
   "Apr. 28 (Fr)",
@@ -271,78 +271,79 @@ lectures:
   # Week 6
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec5">5. SVMs</a>
+    section: Midterm I Review <!--<a href="/cs181-web/sections#sec5">5. SVMs</a>-->
     readings:
     hw:
     type: 'sec'
   # Tu
-  - topic: SVMs 2
-    subtopic: <a href="/cs181-web/recaps/lec11">Support Vector Machines 2</a>
+  - topic:
+    subtopic: Bayesian Inference <!--<a href="/cs181-web/recaps/lec11">Support Vector Machines 2</a>-->
     section:
-    readings: 5.4
+    readings: <!--5.4-->
     hw:
   # Th
-  - topic: Unsupervised learning
-    subtopic: <a href="/cs181-web/recaps/lec13">Clustering</a>
+  - topic: Practical
+    subtopic: Practical I Content <!--<a href="/cs181-web/recaps/lec13">Clustering</a>-->
     section:
-    readings: 6
+    readings: <!--6-->
     demos:
-    hw:
+    release: Practical I released (modeling)
   # Fr
   - topic:
     subtopic:
     section:
     readings:
     hw:
-    dl: HW 3 due
-    release: <a href="/cs181-web/homework#hw4">HW 4 released (ethics, clustering, SVM)</a>
+    beyond: Advanced Sampling and Variational Inference
+    dl: <!--HW 3 due-->
+    release: <!--<a href="/cs181-web/homework#hw4">HW 4 released (ethics, clustering, SVM)</a>-->
     type: 'hw'
 
   # Week 7
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec7">7. K-means, HAC</a>
+    section: Case Studies in AI and Ethics <!--<a href="/cs181-web/sections#sec7">7. K-means, HAC</a>-->
     readings:
     hw:
     type: 'sec'
   # Tu
   - topic:
-    subtopic: Spring break
+    subtopic: Midterm I
     section:
     readings:
     demos:
-    hw: <a href="/cs181-web/homework#hw4">HW4 (SVM, Clustering, and Ethics)</a> released
+    hw: <!--<a href="/cs181-web/homework#hw4">HW4 (SVM, Clustering, and Ethics)</a> released-->
+    type: 'exam'
   # Th
-  - topic:
-    subtopic: Spring break
+  - topic: Ethics
+    subtopic: Embedded Ethics Lecture
     section:
-    readings: 9.1-9.5
+    readings: <!--9.1-9.5-->
     demos:
     hw:
   # Fr
   - topic:
-    subtopic: Spring break
+    subtopic:
     subtopic:
     section:
     readings:
-    type: 'hw'
 
   # Week 8
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec8">8. Mixture, EM</a>
+    section: <!--<a href="/cs181-web/sections#sec8">8. Mixture, EM</a>-->
     readings:
     hw:
     type: 'sec'
   # Tu
   - topic:
-    subtopic: <a href="/cs181-web/recaps/lec15">Mixture Models</a>
+    subtopic: Spring Break! <a href="/cs181-web/recaps/lec15">Mixture Models</a>
     section:
     readings:
     hw:
   # Th
   - topic:
-    subtopic: <a href="/cs181-web/recaps/lec16">PCA</a>
+    subtopic: Spring Break! <a href="/cs181-web/recaps/lec16">PCA</a>
     section:
     readings:
     hw:
@@ -350,57 +351,60 @@ lectures:
   - topic:
     subtopic:
     section:
+    beyond: Spring Break!
     readings:
-    dl: HW 4 due
-    release: <a href="/cs181-web/homework#hw5">HW 5 released (Mixtures, EM, graphical models)</a>
+    dl: <!--HW 4 due-->
+    release: <!--<a href="/cs181-web/homework#hw5">HW 5 released (Mixtures, EM, graphical models)</a>-->
     type: 'hw'
 
   # Week 9
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec9">9. PCA, topic models</a>
+    section: Dimensionality Reduction and PCA <!--<a href="/cs181-web/sections#sec9">9. PCA, topic models</a>-->
     readings:
     hw:
     type: 'sec'
   # Tu
-  - topic:  GMs and BNs
-    subtopic: <a href="/cs181-web/recaps/lec17">Topic Models</a>
+  - topic:  Dimensionality Reduction
+    subtopic: Dimensionality Reduction <!--<a href="/cs181-web/recaps/lec17">Topic Models</a>-->
     section:
-    readings: 8
+    readings: <!--8-->
     hw:
     type:
   # Th
-  - topic:
-    subtopic: <a href="/cs181-web/recaps/lec18">Graphical Models</a>
+  - topic: Latent Variable Models
+    subtopic: Latent Variable Models and Expectation Maximization (EM) <!--<a href="/cs181-web/recaps/lec18">Graphical Models</a>-->
     section:
+    dl: HW 3 and Practical I due
     readings:
     demos:
-    hw:
+    hw: HW 4 released (latent variables and EM)
   # Fr
   - topic:
     subtopic:
     section:
     readings:
-    release: Practical released
-    type: 'hw'
+    beyond: Variational Autoencoders (VAE)
+    release: 
+    type:
 
   # Week 10
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec10">10. Bayes nets, inference</a>
+    section: EM <!--<a href="/cs181-web/sections#sec10">10. Bayes nets, inference</a>-->
     readings:
     hw:
     type: 'sec'
   # Tu
-  - topic:
-    subtopic: <a href="/cs181-web/recaps/lec19">Inference for Bayes Nets</a>
+  - topic: Clustering
+    subtopic: Clustering <!--<a href="/cs181-web/recaps/lec19">Inference for Bayes Nets</a>-->
     section:
     readings:
     hw:
     type:
   # Th
-  - topic:
-    subtopic: <a href="/cs181-web/recaps/lec20">Hidden Markov Models</a>
+  - topic: Topic Models
+    subtopic: Topic Models <!--<a href="/cs181-web/recaps/lec20">Hidden Markov Models</a>-->
     section:
     readings:
     demos:
@@ -410,54 +414,54 @@ lectures:
     subtopic:
     section:
     readings:
-    dl: HW 5 due
+    beyond: Representation Learning
     release:
     type: 'hw'
 
   # Week 11
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec11">11. HMMs, Kalman filters</a>
+    section: Time Series <!--<a href="/cs181-web/sections#sec11">11. HMMs, Kalman filters</a>-->
     readings:
     hw:
     type: 'sec'
   # Tu
-  - topic: RL
-    subtopic: <a href="/cs181-web/recaps/lec21">Markov Decision Processes</a>
+  - topic: Graphical Models
+    subtopic: Graphical Models and Hidden Markov Models (HMM) <!--<a href="/cs181-web/recaps/lec21">Markov Decision Processes</a>-->
     section:
-    readings: SB 3.1-3.6, SB 4.1-4.4 *
+    readings: <!--SB 3.1-3.6, SB 4.1-4.4 *-->
     hw:
   # Th
   - topic:
-    subtopic:
+    subtopic: Inference of HMMs
     section:
     readings:
-    hw:
+    hw: HW 5 released (HMM)
+    dl: HW 4 due
   # Fr
   - topic:
     subtopic:
     section:
     readings:
-    dl: Practical due
-    release: <a href="/cs181-web/homework#hw6">HW6 released (inference in graphical models, MDPs)</a>
+    beyond: Nonlinear Dynamics
     type: 'hw'
 
   # Week 12
   - topic:
     subtopic:
-    section: <a href="/cs181-web/sections#sec12">12. Reinforced learning, MDPs</a>
+    section: Defining Markov Decision Processes (MDPs) <!--<a href="/cs181-web/sections#sec12">12. Reinforced learning, MDPs</a>-->
     readings:
     hw:
     type: 'sec'
   # Tu
   - topic:
-    subtopic: <a href="/cs181-web/recaps/lec22">Reinforcement Learning 2</a>
+    subtopic: HMMs and Learning <!--<a href="/cs181-web/recaps/lec22">Reinforcement Learning 2</a>-->
     section:
-    readings: SB 1.1-1.4, SB 6.1-6.5 *
+    readings: <!--SB 1.1-1.4, SB 6.1-6.5 *-->
     hw:
   # Th
-  - topic:
-    subtopic: <a href="/cs181-web/recaps/lec23">Interpretability</a>
+  - topic: Markov Decision Processes (MDPs)
+    subtopic: MDPs <!--<a href="/cs181-web/recaps/lec23">Interpretability</a>-->
     section:
     readings:
     demos:
@@ -467,6 +471,7 @@ lectures:
   - topic:
     subtopic:
     section:
+    beyond: Reinforcement Learning vs. Bandits
     readings:
     dl:
     type: 'hw'
@@ -474,20 +479,52 @@ lectures:
   # Week 13
   - topic:
     subtopic:
-    section: Midterm 2 review
+    section: Reinforcement Learning (RL) Algorithms
+    readings:
+    hw:
+    type: 'sec'
+  # Tu
+  - topic: Reinforcement Learning (RL)
+    subtopic: Model-Based RL
+    section:
+    readings:
+    hw:
+  # Th
+  - topic: 
+    subtopic: Model-Free RL
+    section:
+    dl: HW 5 due
+    readings:
+    hw: Practical II released (RL and social-technical systems)
+  # Fr
+  - topic:
+    subtopic:
+    section:
+    readings:
+    beyond: Open Problems in RL 
+    dl:
+    type: 'hw'
+
+
+  # Week 14
+  - topic:
+    subtopic:
+    section: Midterm II Review
     readings:
     hw:
     type: 'sec'
   # Tu
   - topic:
-    subtopic: Midterm 2
+    subtopic: Practical II Content
     section:
     readings:
     hw:
-    type: 'exam'  # Tu
-  - topic:
-    subtopic:
+  # Th
+  - topic: 
+    subtopic: Midterm II
     section:
+    dl:
+    type: 'exam'
     readings:
     hw:
   # Fr
@@ -495,9 +532,11 @@ lectures:
     subtopic:
     section:
     readings:
-    dl: HW 6 due
+    beyond: ML Research Beyond 181
+    dl: Practical II due end of Reading Period (May 3)
     type: 'hw'
-
+    
+    
 beyondcs181:
   - name: "(02/11/2022) Kernel Regression and Gaussian Processes (<a href='/cs181-web/files/beyond_cs_181_L1.pdf'>Slides</a>)"
   - name: "(02/18/2022) Decision Trees and Ensemble Models (<a href='/cs181-web/files/beyond_cs_181_L2.pdf'>Slides</a>)"
