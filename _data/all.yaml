@@ -24,6 +24,9 @@ tas:
   - name: <a href="mailto:varshinisubhash@g.harvard.edu">Varshini Subhash</a>
   - name: <a href="mailto:wtong@g.harvard.edu">William Tong</a>
 
+beyondcs181:
+  - name: "Week 1 - AI and Broader Impact"
+  - slides: "Week-1-AI-and-Broader-Impact.pdf"
 
 ohs:
   - time: TBD
