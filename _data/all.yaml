@@ -26,7 +26,7 @@ tas:
 
 beyondcs181:
   - name: "Week 1 - AI and Broader Impact"
-  - slides: "Week-1-AI-and-Broader-Impact.pdf"
+    slides: "Week-1-AI-and-Broader-Impact.pdf"
 
 ohs:
   - time: TBD

@@ -13,10 +13,9 @@ weight: 0
             {% for session in site.data.all.beyondcs181 %}
             <li>
                 {{session.name}} 
-                (<a href="{{ site.baseurl }}/file/{{session.name}}">slides</a>)
+                (<a href="{{ site.baseurl }}/file/{{session.slides}}">slides</a>)
             </li>
             {% endfor %}
         </ul>
-       
     </div>
 </section>
