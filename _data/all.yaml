@@ -1,28 +1,19 @@
 tas:  
-  - name: <a href="mailto:skylerwu@college.harvard.edu">Skyler Wu</a> (Head TF)
-  - name: <a href="mailto:matthewnazari@college.harvard.edu">Matthew Nazari</a> (Head TF)
-  - name: <a href="mailto:alexrojas@college.harvard.edu">Alex Rojas</a>
-  - name: <a href="mailto:alyssahuang@college.harvard.edu">Alyssa Huang</a>
-  - name: <a href="mailto:charumathibadrinath@college.harvard.edu">Charumathi Badrinath</a>
-  - name: <a href="mailto:davidharshbarger@g.harvard.edu">David Harshbarger</a>
-  - name: <a href="mailto:derek_zheng@college.harvard.edu">Derek Zheng</a>
-  - name: <a href="mailto:dylanhu@college.harvard.edu">Dylan Hu</a>
-  - name: <a href="mailto:georgecai@college.harvard.edu">George Cai</a>
-  - name: <a href="mailto:ivonne_martinez@g.harvard.edu">Ivonne Martinez</a>
+  - name: <a href="mailto:charumathibadrinath@college.harvard.edu">Charumathi Badrinath</a> (Head TF)
+  - name: <a href="mailto:alexcai@college.harvard.edu">Alex Cai</a> (Head TF)
+  - name: <a href="mailto:evanjiang@college.harvard.edu">Evan Jiang</a>
+  - name: <a href="mailto:katrinabrown@college.harvard.edu">Katrina Brown</a>
+  - name: <a href="mailto:ayli@college.harvard.edu">Angela Li</a>
+  - name: <a href="mailto:bham@college.harvard.edu">Brian Ham</a>
+  - name: <a href="mailto:audreychang@college.harvard.edu">Audrey Chang</a>
+  - name: <a href="mailto:ahmad_abdelazim@college.harvard.edu">Ahmad Abdel-Azim</a>
+  - name: <a href="mailto:gabrielsun@college.harvard.edu">Gabriel Sun</a>
+  - name: <a href="mailto:shirleyzhu@college.harvard.edu">Shirley Zhu</a>
   - name: <a href="mailto:jeffreyxu@college.harvard.edu">Jeffrey Xu</a>
-  - name: <a href="mailto:kluo1@college.harvard.edu">Kevin Luo</a>
-  - name: <a href="mailto:linn_bieske@hks.harvard.edu">Linn Bieske</a>
-  - name: <a href="mailto:lukebailey@college.harvard.edu">Luke Bailey</a>
-  - name: <a href="mailto:marcel_tornevillasevil@g.harvard.edu">Marcel Torne</a>
-  - name: <a href="mailto:matthewqu@college.harvard.edu">Matthew Qu</a>
-  - name: <a href="mailto:michellelu@college.harvard.edu">Michelle Lu</a>
-  - name: <a href="mailto:nkopparapu@college.harvard.edu">Neeyanth Kopparapu</a>
-  - name: <a href="mailto:ocheng@college.harvard.edu">Oliver Cheng</a>
+  - name: <a href="mailto:alyssahuang@college.harvard.edu">Alyssa Huang</a>
+  - name: <a href="mailto:derek_zheng@college.harvard.edu">Derek Zheng</a>
   - name: <a href="mailto:samjones@college.harvard.edu">Sam Jones</a>
-  - name: <a href="mailto:sganesh@college.harvard.edu">Srihari Ganesh</a>
-  - name: <a href="mailto:Tygeri@college.harvard.edu">Ty Geri</a>
-  - name: <a href="mailto:varshinisubhash@g.harvard.edu">Varshini Subhash</a>
-  - name: <a href="mailto:wtong@g.harvard.edu">William Tong</a>
+  - name: <a href="mailto:nkopparapu@college.harvard.edu">Neeyanth Kopparapu</a>
 
 beyondcs181:
   - name: "Week 1 - AI and Broader Impact"
