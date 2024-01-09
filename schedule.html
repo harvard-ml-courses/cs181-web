@@ -5,31 +5,50 @@ weight: 0
 ---
 
 <section class="main-container text">
-    <p> Schedule for Spring 2024 TBD! </p>
     <div class="main">
-        <table class="table">
-            <tr>
-                <th>Date</th>
-                <th>Topic</th>
-                <th>Subtopic</th>
-                <th>Section</th>
-                <th>Readings</th>
-                <th>HW Release</th>
-                <th>HW Deadline</th>
-            </tr>
-            {% for lecture in site.data.all.lectures %}
-            <tr class='{{lecture.type|default: ""}}'>
-                <td> {{site.data.all.dates[forloop.index]}} </td>
-                <td> {{lecture.topic | default: ""}} </td>
-                <td> {{lecture.subtopic | default: ""}}</td>
-                <td> {{lecture.section | default: ""}}</td>
-                <td> {{lecture.readings | default: ""}}</td>
-                <td> {{lecture.release | default: ""}}</td>
-                <td> {{lecture.dl | default: ""}}</td>
-            </tr>
-            {% endfor %}
+        <h2>Schedule</h2>
+        <iframe
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQabh8HnxP3V-ThyikOCD2K8xmUeoslgsYMTPL5ECh0T6B-NeFUGxXc-K7UCj-OsEtFhZazyp1Xay5m/pubhtml?gid=1863065080&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
+
+        <h2>Office hours</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Location</th>
+                    <th>Staff</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for oh in site.data.all.ohs %}
+                <tr>
+                    <td>{{ oh.time }}</td>
+                    <td>{{ oh.location }}</td>
+                    <td>{{ oh.tfs }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
         </table>
 
-        *SB refers to <a href="{{ site.baseurl }}/resources#sb">Sutton and Barto 2018, Reinforcement Learning: An Introduction</a>.
+        <h2>Sections</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Location</th>
+                    <th>Staff</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for oh in site.data.all.sections %}
+                <tr>
+                    <td>{{ oh.time }}</td>
+                    <td>{{ oh.location }}</td>
+                    <td>{{ oh.tfs }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
 </section>
