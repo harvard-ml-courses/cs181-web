@@ -6,55 +6,22 @@ weight: 0
 
 <section class="main-container text">
     <div class="main">
-        <!-- data is configured in _data/all.yaml -->
-
-        <h2>Sections</h2>
         <p>
             CS 181 has weekly sections to reinforce lecture material with extra explanations
             and exercises. Solutions are posted after all sections have taken place.
             Section notes and solutions will be posted on the <a href="{{ site.baseurl }}/schedule">course schedule</a>.
-            A Google Calendar is also embedded <a href="#gcal">below</a>.
         </p>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Time</th>
-                    <th>Location</th>
-                    <th>Staff</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for oh in site.data.all.sections %}
-                <tr>
-                    <td>{{ oh.time }}</td>
-                    <td>{{ oh.location }}</td>
-                    <td>{{ oh.tfs }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <p>
+            We encourage you to come to staff office hours if you have questions about the course material or the
+            homeworks.
+        </p>
 
-        <h2>Office hours</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Time</th>
-                    <th>Location</th>
-                    <th>Staff</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for oh in site.data.all.ohs %}
-                <tr>
-                    <td>{{ oh.time }}</td>
-                    <td>{{ oh.location }}</td>
-                    <td>{{ oh.tfs }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <div class="embed-responsive embed-responsive-16by9 w-100">
+            <iframe class="embed-responsive-item"
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQabh8HnxP3V-ThyikOCD2K8xmUeoslgsYMTPL5ECh0T6B-NeFUGxXc-K7UCj-OsEtFhZazyp1Xay5m/pubhtml?gid=1205943684&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+        </div>
 
-        <div class="embed-responsive embed-responsive-4by3 w-100" id="gcal">
+        <div class="embed-responsive embed-responsive-4by3 w-100">
             <iframe class="embed-responsive-item"
                 src="https://calendar.google.com/calendar/embed?src=c_f69d6d4ef1d31eb8558c88407d946c5970c48f0624a6d840cc22885edf4ab15c%40group.calendar.google.com&ctz=America%2FNew_York"
                 style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
