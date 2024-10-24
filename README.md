@@ -1,6 +1,6 @@
 # cs181-web
 
-Course Website for CS 181: Machine Learning at Harvard University in Spring 2024.
+Course Website for CS 1810: Machine Learning at Harvard University in Spring 2025.
 
 Based on design by Alvin Wan (alvinwan.com) for CS294-112 at UC Berkeley.
 
