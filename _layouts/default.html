@@ -5,25 +5,23 @@
 
     <body>
 
-	<div style="
-        	background: #fff3cd;
-        	color: #856404;
-        	padding: 12px 16px;
-        	text-align: center;
-        	font-weight: 500;
-     		border-bottom: 1px solid #ffeeba;
-	">
-        	This site is out of date.
-        	To see the current course website,
-        	<a href="https://harvard-ml-courses.github.io/cs181-web/"
-           	   style="color: #0056b3; text-decoration: underline;">
-                    click here
-        	</a>.
-	</div>
-
         {% include header.html %}
 
         <div id="main-container">
+
+	    <div style="
+                background: #fff3cd;
+                color: #856404;
+                padding: 12px 16px;
+                text-align: center;
+                font-weight: 500;
+                border-bottom: 1px solid #ffeeba;
+            ">
+                This site is out of date.
+                To see the current course website,
+                <a href="https://harvard-ml-courses.github.io/cs181-web/">click here</a>.
+                </a>.
+            </div>
             {{ content }}
         </div>
 
